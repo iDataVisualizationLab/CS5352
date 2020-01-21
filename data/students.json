@@ -1,0 +1,38 @@
+[
+    {
+      "full_name": "Zulfiqar Ali Khan",
+      "photo": "images/non_photo.png",
+      "program": "PhD",
+      "nickname": "75396"
+    },
+    {
+      "full_name": "Pham Minh Chau",
+      "photo": "images/non_photo.png",
+      "program": "PhD",
+      "nickname": "Chau"
+    },
+    {
+      "full_name": "Karishma Garikapalli",
+      "photo": "images/non_photo.png",
+      "program": "Master",
+      "nickname": "GK"
+    },
+    {
+      "full_name": "Bao Dien Quoc Nguyen",
+      "photo": "images/non_photo.png",
+      "program": "PhD",
+      "nickname": "BaoDNguyen"
+    },
+    {
+      "full_name": "Ngan Vuong Thuy Nguyen",
+      "photo": "images/non_photo.png",
+      "program": "PhD",
+      "nickname": "Lucy"
+    },
+    {
+      "full_name": "Hao Minh Van",
+      "photo": "images/non_photo.png",
+      "program": "PhD",
+      "nickname": "Hao"
+    }
+ ]

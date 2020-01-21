@@ -1,0 +1,10 @@
+.card {
+    width: 250px;
+    height: 100px;
+    background-color: lightskyblue;
+}
+
+.card-photo {
+    width: 75px;
+    height: 75px;
+}
