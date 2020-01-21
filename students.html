@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>CS CS5331-004 Students</title>
+    <link rel="stylesheet" type="text/css" href="css/students.css"/>
 </head>
 <body bgcolor="white" text="black">
 <div id="main"></div>
@@ -14,7 +15,23 @@
         d3.json('data/students.json').then(function (data) {
             let container = d3.select('#main');
             console.log(data);
+            let cards = container.selectAll('.card')
+                .data(data)
+                .enter()
+                .append('div')
+                .attr('class', 'card');
 
+            cards.append('div')
+                .attr('class', 'card-photo')
+                .append('img')
+                .attr('src', d => d.photo)
+                .attr('width', '100px')
+                .attr('height', '100px');
+
+            let cardsInfo = cards.append('div')
+                .attr('class', 'card-info');
+
+            cardsInfo.append('span').attr('class', 'card-info-name').text(d => d.full_name);
         });
     })
 
