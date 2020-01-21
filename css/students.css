@@ -21,6 +21,12 @@
     background-color: white;
 }
 
+.card-photo > img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
 .card-info {
     display: inline-block;
     width: 150px;
