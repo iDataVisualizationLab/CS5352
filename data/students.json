@@ -17,7 +17,7 @@
       "id": 3,
       "full_name": "Karishma Garikapalli",
       "photo": "images/Karishma_Garikapalli.png",
-      "program": "Master",
+      "program": "Masters",
       "nickname": "GK"
     },
     {
@@ -40,5 +40,33 @@
       "photo": "images/non_photo.png",
       "program": "PhD",
       "nickname": "Hao"
+    },
+    {
+      "id": 7,
+      "full_name": "Justin Rodriguez",
+      "photo": "images/Justin_Rodriguez.jpg",
+      "program": "Masters",
+      "nickname": "just331"
+    },
+    {
+      "id": 8,
+      "full_name": "Zacharias E. Alaniz",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Zach"
+    },
+    {
+      "id": 9,
+      "full_name": "Van Vung Pham",
+      "photo": "images/Van_Vung_Pham.png",
+      "program": "PhD",
+      "nickname": "VP"
+    },
+    {
+      "id": 10,
+      "full_name": "Aditi Misra",
+      "photo": "images/Aditi_Misra.jpg",
+      "program": "Masters",
+      "nickname": "Aditi Misra"
     }
  ]
