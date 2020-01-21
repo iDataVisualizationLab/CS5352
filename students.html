@@ -31,7 +31,7 @@
             let cardsInfo = cards.append('div')
                 .attr('class', 'card-info');
 
-            cardsInfo.append('span').attr('class', 'card-info-name').text(d => d.full_name);
+            cardsInfo.append('span').attr('class', 'card-info-name').text(d => d.id + '. ' + d.full_name);
         });
     })
 
