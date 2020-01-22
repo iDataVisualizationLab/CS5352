@@ -4,76 +4,87 @@
       "full_name": "Zulfiqar Ali Khan",
       "photo": "images/non_photo.png",
       "program": "PhD",
-      "nickname": "75396"
+      "nickname": "75396",
+      "first_name": "Zulfi"
     },
     {
       "id": 2,
       "full_name": "Pham Minh Chau",
       "photo": "images/Pham_Minh_Chau.jpg",
       "program": "PhD",
-      "nickname": "Chau"
+      "nickname": "Chau",
+      "first_name": "Chau"
     },
     {
       "id": 3,
       "full_name": "Karishma Garikapalli",
       "photo": "images/Karishma_Garikapalli.png",
       "program": "Masters",
-      "nickname": "GK"
+      "nickname": "GK",
+      "first_name": "Karishma"
     },
     {
       "id": 4,
       "full_name": "Bao Dien Quoc Nguyen",
       "photo": "images/non_photo.png",
       "program": "PhD",
-      "nickname": "BaoDNguyen"
+      "nickname": "BaoDNguyen",
+      "first_name": "Bao"
     },
     {
       "id": 5,
       "full_name": "Ngan Vuong Thuy Nguyen",
       "photo": "images/non_photo.png",
       "program": "PhD",
-      "nickname": "Lucy"
+      "nickname": "Lucy",
+      "first_name": "Ngan"
     },
     {
       "id": 6,
       "full_name": "Hao Minh Van",
       "photo": "images/non_photo.png",
       "program": "PhD",
-      "nickname": "Hao"
+      "nickname": "Hao",
+      "first_name": "Hao"
     },
     {
       "id": 7,
       "full_name": "Justin Rodriguez",
       "photo": "images/Justin_Rodriguez.jpg",
       "program": "Masters",
-      "nickname": "just331"
+      "nickname": "just331",
+      "first_name": "Justin"
     },
     {
       "id": 8,
       "full_name": "Zacharias E. Alaniz",
       "photo": "images/non_photo.png",
       "program": "Masters",
-      "nickname": "Zach"
+      "nickname": "Zach",
+      "first_name": "Zacharias"
     },
     {
       "id": 9,
       "full_name": "Van Vung Pham",
       "photo": "images/Van_Vung_Pham.png",
       "program": "PhD",
-      "nickname": "VP"
+      "nickname": "VP",
+      "first_name": "Vung"
     },
     {
       "id": 10,
       "full_name": "Aditi Misra",
       "photo": "images/Aditi_Misra.jpg",
       "program": "Masters",
-      "nickname": "Aditi Misra"
+      "nickname": "Aditi Misra",
+      "first_name": "Aditi"
     },
     {
       "id": 11,
       "full_name": "Zekarias Getu Setotaw",
       "photo": "images/non_photo.png",
       "program": "Masters",
-      "nickname": "Zeki"
+      "nickname": "Zeki",
+      "first_name": "Zekarias"
     }
  ]
