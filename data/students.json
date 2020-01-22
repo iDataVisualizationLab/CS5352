@@ -68,5 +68,12 @@
       "photo": "images/Aditi_Misra.jpg",
       "program": "Masters",
       "nickname": "Aditi Misra"
+    },
+    {
+      "id": 11,
+      "full_name": "Zekarias Getu Setotaw",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Zeki"
     }
  ]
