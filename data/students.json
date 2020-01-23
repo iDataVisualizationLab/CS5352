@@ -158,6 +158,14 @@
       "program": "Masters",
       "nickname": "Siddhu",
       "first_name": "Siddhartha"
+    },    
+    {
+      "id": 21,
+      "full_name": "Sayan Maitra",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Dante",
+      "first_name": "Sayan"
     }
 
  ]
