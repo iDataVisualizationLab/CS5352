@@ -118,6 +118,14 @@
       "program": "Masters",
       "nickname": "Reese",
       "first_name": "Sourav"
+    },    
+    {
+      "id": 16,
+      "full_name": "Supadchaya Puangpontip",
+      "photo": "images/non_photo.png",
+      "program": "PhD",
+      "nickname": "Pat",
+      "first_name": "Supadchaya"
     }
 
  ]
