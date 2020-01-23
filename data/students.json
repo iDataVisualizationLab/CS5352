@@ -42,7 +42,7 @@
     {
       "id": 6,
       "full_name": "Hao Minh Van",
-      "photo": "images/non_photo.png",
+      "photo": "images/Hao_Minh_Van.jpeg",
       "program": "PhD",
       "nickname": "Hao",
       "first_name": "Hao"
@@ -86,5 +86,38 @@
       "program": "Masters",
       "nickname": "Zeki",
       "first_name": "Zekarias"
+    },
+    {
+      "id": 12,
+      "full_name": "Anubhav Tiwari",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Anu",
+      "first_name": "Anubhav"
+    },    
+    {
+      "id": 13,
+      "full_name": "Shwetha Bali Yadav",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Tinker Bell",
+      "first_name": "Shwetha Bali"
+    },    
+    {
+      "id": 14,
+      "full_name": "Swathi Bali Yadav",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Airel",
+      "first_name": "Swathi Bali"
+    },    
+    {
+      "id": 15,
+      "full_name": "Sourav Verma",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Reese",
+      "first_name": "Sourav"
     }
+
  ]
