@@ -166,6 +166,13 @@
       "program": "Masters",
       "nickname": "Dante",
       "first_name": "Sayan"
+    },    
+    {
+      "id": 22,
+      "full_name": "Abraham Ogidi-Olu",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Abe O.",
+      "first_name": "Abraham"
     }
-
  ]
