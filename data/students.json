@@ -126,6 +126,30 @@
       "program": "PhD",
       "nickname": "Pat",
       "first_name": "Supadchaya"
+    },    
+    {
+      "id": 17,
+      "full_name": "Benjamin Paul",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "2668S",
+      "first_name": "Benjamin"
+    },    
+    {
+      "id": 18,
+      "full_name": "Dhruv Chetan Mehta",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Dee",
+      "first_name": "Dhruv Chetan"
+    },    
+    {
+      "id": 19,
+      "full_name": "Manisha Rajendra Wakase",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Godzilla",
+      "first_name": "Manisha"
     }
 
  ]
