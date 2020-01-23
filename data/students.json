@@ -150,6 +150,14 @@
       "program": "Masters",
       "nickname": "Godzilla",
       "first_name": "Manisha"
+    },    
+    {
+      "id": 20,
+      "full_name": "Siddhartha Ireddy",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Siddhu",
+      "first_name": "Siddhartha"
     }
 
  ]
