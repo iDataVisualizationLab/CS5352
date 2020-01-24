@@ -174,5 +174,13 @@
       "program": "Masters",
       "nickname": "Abe O.",
       "first_name": "Abraham"
+    },    
+    {
+      "id": 23,
+      "full_name": "Vamsidhar Reddy Poothi",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Vamsi",
+      "first_name": "Vamsidhar"
     }
  ]
