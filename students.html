@@ -15,7 +15,6 @@
         d3.json('data/students.json').then(function (data) {
             data = sortByFirstName(data);
             let container = d3.select('#main');
-            console.log(data);
             let cards = container.selectAll('.card')
                 .data(data)
                 .enter()
