@@ -190,5 +190,13 @@
       "program": "Masters",
       "nickname": "cool24",
       "first_name": "Sai"
+    },    
+    {
+      "id": 25,
+      "full_name": "Vinh The Nguyen",
+      "photo": "images/non_photo.png",
+      "program": "PhD",
+      "nickname": "Dani",
+      "first_name": "Vinh"
     }
  ]
