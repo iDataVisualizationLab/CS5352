@@ -1,0 +1,202 @@
+[
+    {
+      "id": 1,
+      "full_name": "Zulfiqar Ali Khan",
+      "photo": "images/non_photo.png",
+      "program": "PhD",
+      "nickname": "75396",
+      "first_name": "Zulfi"
+    },
+    {
+      "id": 2,
+      "full_name": "Pham Minh Chau",
+      "photo": "images/Pham_Minh_Chau.jpg",
+      "program": "PhD",
+      "nickname": "Chau",
+      "first_name": "Chau"
+    },
+    {
+      "id": 3,
+      "full_name": "Karishma Garikapalli",
+      "photo": "images/Karishma_Garikapalli.png",
+      "program": "Masters",
+      "nickname": "GK",
+      "first_name": "Karishma"
+    },
+    {
+      "id": 4,
+      "full_name": "Bao Dien Quoc Nguyen",
+      "photo": "images/non_photo.png",
+      "program": "PhD",
+      "nickname": "BaoDNguyen",
+      "first_name": "Bao"
+    },
+    {
+      "id": 5,
+      "full_name": "Ngan Vuong Thuy Nguyen",
+      "photo": "images/non_photo.png",
+      "program": "PhD",
+      "nickname": "Lucy",
+      "first_name": "Ngan"
+    },
+    {
+      "id": 6,
+      "full_name": "Hao Minh Van",
+      "photo": "images/Hao_Minh_Van.jpeg",
+      "program": "PhD",
+      "nickname": "Hao",
+      "first_name": "Hao"
+    },
+    {
+      "id": 7,
+      "full_name": "Justin Rodriguez",
+      "photo": "images/Justin_Rodriguez.jpg",
+      "program": "Masters",
+      "nickname": "just331",
+      "first_name": "Justin"
+    },
+    {
+      "id": 8,
+      "full_name": "Zacharias E. Alaniz",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Zach",
+      "first_name": "Zacharias"
+    },
+    {
+      "id": 9,
+      "full_name": "Van Vung Pham",
+      "photo": "images/Van_Vung_Pham.png",
+      "program": "PhD",
+      "nickname": "VP",
+      "first_name": "Vung"
+    },
+    {
+      "id": 10,
+      "full_name": "Aditi Misra",
+      "photo": "images/Aditi_Misra.jpg",
+      "program": "Masters",
+      "nickname": "Aditi Misra",
+      "first_name": "Aditi"
+    },
+    {
+      "id": 11,
+      "full_name": "Zekarias Getu Setotaw",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Zeki",
+      "first_name": "Zekarias"
+    },
+    {
+      "id": 12,
+      "full_name": "Anubhav Tiwari",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Anu",
+      "first_name": "Anubhav"
+    },    
+    {
+      "id": 13,
+      "full_name": "Shwetha Bali Yadav",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Tinker Bell",
+      "first_name": "Shwetha Bali"
+    },    
+    {
+      "id": 14,
+      "full_name": "Swathi Bali Yadav",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Airel",
+      "first_name": "Swathi Bali"
+    },    
+    {
+      "id": 15,
+      "full_name": "Sourav Verma",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Reese",
+      "first_name": "Sourav"
+    },    
+    {
+      "id": 16,
+      "full_name": "Supadchaya Puangpontip",
+      "photo": "images/non_photo.png",
+      "program": "PhD",
+      "nickname": "Pat",
+      "first_name": "Supadchaya"
+    },    
+    {
+      "id": 17,
+      "full_name": "Benjamin Paul",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "2668S",
+      "first_name": "Benjamin"
+    },    
+    {
+      "id": 18,
+      "full_name": "Dhruv Chetan Mehta",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Dee",
+      "first_name": "Dhruv Chetan"
+    },    
+    {
+      "id": 19,
+      "full_name": "Manisha Rajendra Wakase",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Godzilla",
+      "first_name": "Manisha"
+    },    
+    {
+      "id": 20,
+      "full_name": "Siddhartha Ireddy",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Siddhu",
+      "first_name": "Siddhartha"
+    },    
+    {
+      "id": 21,
+      "full_name": "Sayan Maitra",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Dante",
+      "first_name": "Sayan"
+    },    
+    {
+      "id": 22,
+      "full_name": "Abraham Ogidi-Olu",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Abe O.",
+      "first_name": "Abraham"
+    },    
+    {
+      "id": 23,
+      "full_name": "Vamsidhar Reddy Poothi",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "Vamsi",
+      "first_name": "Vamsidhar"
+    },    
+    {
+      "id": 24,
+      "full_name": "Sai Bhavesh Nooka",
+      "photo": "images/non_photo.png",
+      "program": "Masters",
+      "nickname": "cool24",
+      "first_name": "Sai"
+    },    
+    {
+      "id": 25,
+      "full_name": "Vinh The Nguyen",
+      "photo": "images/non_photo.png",
+      "program": "PhD",
+      "nickname": "Dani",
+      "first_name": "Vinh"
+    }
+ ]
