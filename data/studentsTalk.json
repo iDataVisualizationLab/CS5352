@@ -2,10 +2,11 @@
     {
       "id": 1,
       "full_name": "Zulfiqar Ali Khan",
-      "photo": "images/non_photo.png",
+      "photo": "images/Zulfiqar_Ali_Khan.jpg",
       "program": "PhD",
       "nickname": "75396",
-      "first_name": "Zulfi"
+      "first_name": "Zulfi",
+      "presentDate": "2"
     },
     {
       "id": 2,
@@ -13,7 +14,8 @@
       "photo": "images/Pham_Minh_Chau.jpg",
       "program": "PhD",
       "nickname": "Chau",
-      "first_name": "Chau"
+      "first_name": "Chau",
+      "presentDate": "02/11/2020"
     },
     {
       "id": 3,
@@ -21,12 +23,13 @@
       "photo": "images/Karishma_Garikapalli.png",
       "program": "Masters",
       "nickname": "GK",
-      "first_name": "Karishma"
+      "first_name": "Karishma",
+      "presentDate": "02/15/2020"
     },
     {
       "id": 4,
       "full_name": "Bao Dien Quoc Nguyen",
-      "photo": "images/non_photo.png",
+      "photo": "images/Bao_Dien_Quoc_Nguyen.jpg",
       "program": "PhD",
       "nickname": "BaoDNguyen",
       "first_name": "Bao"
@@ -34,7 +37,7 @@
     {
       "id": 5,
       "full_name": "Ngan Vuong Thuy Nguyen",
-      "photo": "images/non_photo.png",
+      "photo": "images/Ngan_Vuong_Thuy_Nguyen.jpg",
       "program": "PhD",
       "nickname": "Lucy",
       "first_name": "Ngan"
@@ -90,7 +93,7 @@
     {
       "id": 12,
       "full_name": "Anubhav Tiwari",
-      "photo": "images/non_photo.png",
+      "photo": "images/Anubhav_Tiwari.jpg",
       "program": "Masters",
       "nickname": "Anu",
       "first_name": "Anubhav"
@@ -98,7 +101,7 @@
     {
       "id": 13,
       "full_name": "Shwetha Bali Yadav",
-      "photo": "images/non_photo.png",
+      "photo": "images/Shwetha_Bali_Yadav.jpg",
       "program": "Masters",
       "nickname": "Tinker Bell",
       "first_name": "Shwetha Bali"
@@ -106,7 +109,7 @@
     {
       "id": 14,
       "full_name": "Swathi Bali Yadav",
-      "photo": "images/non_photo.png",
+      "photo": "images/Swathi_Bali_Yadav.jpg",
       "program": "Masters",
       "nickname": "Airel",
       "first_name": "Swathi Bali"
@@ -122,7 +125,7 @@
     {
       "id": 16,
       "full_name": "Supadchaya Puangpontip",
-      "photo": "images/non_photo.png",
+      "photo": "images/Supadchaya_Puangpontip.jpg",
       "program": "PhD",
       "nickname": "Pat",
       "first_name": "Supadchaya"
@@ -138,7 +141,7 @@
     {
       "id": 18,
       "full_name": "Dhruv Chetan Mehta",
-      "photo": "images/non_photo.png",
+      "photo": "images/Dhruv_Chetan_Mehta.jpg",
       "program": "Masters",
       "nickname": "Dee",
       "first_name": "Dhruv Chetan"
@@ -146,7 +149,7 @@
     {
       "id": 19,
       "full_name": "Manisha Rajendra Wakase",
-      "photo": "images/non_photo.png",
+      "photo": "images/Manisha_Rajendra_Wakase.jpeg",
       "program": "Masters",
       "nickname": "Godzilla",
       "first_name": "Manisha"
@@ -154,7 +157,7 @@
     {
       "id": 20,
       "full_name": "Siddhartha Ireddy",
-      "photo": "images/non_photo.png",
+      "photo": "images/Siddhartha_Ireddy.jpg",
       "program": "Masters",
       "nickname": "Siddhu",
       "first_name": "Siddhartha"
@@ -162,7 +165,7 @@
     {
       "id": 21,
       "full_name": "Sayan Maitra",
-      "photo": "images/non_photo.png",
+      "photo": "images/Sayan_Maitra.jpg",
       "program": "Masters",
       "nickname": "Dante",
       "first_name": "Sayan"
@@ -178,7 +181,7 @@
     {
       "id": 23,
       "full_name": "Vamsidhar Reddy Poothi",
-      "photo": "images/non_photo.png",
+      "photo": "images/Vamsidhar_Reddy_Poothi.jpeg",
       "program": "Masters",
       "nickname": "Vamsi",
       "first_name": "Vamsidhar"
@@ -194,9 +197,26 @@
     {
       "id": 25,
       "full_name": "Vinh The Nguyen",
-      "photo": "images/non_photo.png",
+      "photo": "images/Vinh_The_Nguyen.jpg",
       "program": "PhD",
       "nickname": "Dani",
-      "first_name": "Vinh"
+      "first_name": "Vinh",
+      "presentDate": "02/13/2020"
+    },    
+    {
+      "id": 26,
+      "full_name": "Lakshmi Sampath Somanath Pagolu",
+      "photo": "images/Lakshmi_Sampath_Somanath_Pagolu.jpg",
+      "program": "Masters",
+      "nickname": "Sampath",
+      "first_name": "Lakshmi Sampath"
+    },    
+    {
+      "id": 27,
+      "full_name": "Yuanxu Xu",
+      "photo": "images/Yuanxu_Xu.png",
+      "program": "Masters",
+      "nickname": "yx",
+      "first_name": "Yuanxu"
     }
  ]

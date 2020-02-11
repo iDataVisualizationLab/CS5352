@@ -36,7 +36,19 @@
     position: absolute;
 }
 
+.card-info2 {
+    display: inline-block;
+    width: 250px;
+    height: 100px;
+    padding: 5px;
+    position: absolute;
+}
+
 .card-info-name {
     text-align: center;
 }
 
+
+.card-info-name2 {
+    text-align: center;
+}
