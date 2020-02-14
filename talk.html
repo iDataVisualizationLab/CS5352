@@ -5,6 +5,7 @@
 <head>
     <title>CS CS5331-004 Students</title>
     <link rel="stylesheet" type="text/css" href="css/students.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body bgcolor="white" text="black">
 <div id="main"></div>
@@ -14,8 +15,8 @@
      <table cellpadding="1" cellspacing="1" align="center" width="100%">
          <tr align="center" bgcolor="#bbb">
           <td style="padding:5px;width: 20px"> <b>No.</b> </td>
-          <td> <b>Paper</td>
-          <td> <b>Year</td>
+             <td> <b>Paper</b></td>
+             <td> <b>Year</b></td>
           <td> <b>Authors</b> </td>
           <td> <b>Links</b> </td>
         </tr>
@@ -139,35 +140,38 @@ https://www.usenix.org/conference/osdi16/technical-sessions/presentation/hunt</a
     The deadline for submiting your selected paper is <b>11:59pm, Feb 14,2020</b>
     <h2> Scheduled talks</h2>
 
-    <table cellpadding="1" cellspacing="1" align="center" width="100%">
-        
-    <tr align="center" bgcolor="#bbb">
-      <td style="padding:5px;width: 20px"> <b>No.</b> </td>
-      <td> <b>Student name</td>
-      <td> <b>Present date</b> </td>
-      <td> <b>Topic</b> </td>
-      <td> <b>Slides</b> </td>
-    </tr>
+    <table cellpadding="1" cellspacing="1" align="center" width="100%" id="listHolder">
+        <thead>
+            <tr align="center" bgcolor="#bbb">
+                <th style="padding:5px;width: 20px"> <b>No.</b> </th>
+                <th> <b>Student name</b></th>
+                <th> <b>Present date</b> </th>
+                <th> <b>Topic</b> </th>
+                <th> <b>Slides</b> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--<tr bgcolor="#eef">-->
+                <!--<td align="left" style="padding:5px;">1</td>-->
+                <!--<td align="left" style="padding:5px;">Pham Minh Chau</td>-->
+                <!--<td align="left" style="padding:5px;">02/11/2020</td>-->
+                <!--<td align="left" style="padding:5px;">Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing<br><a href="https://cs.stanford.edu/~matei/papers/2012/nsdi_spark.pdf">Paper</a> of prof. Matei Zaharia  </td>-->
 
-    <tr bgcolor="#eef">
-        <td align="left" style="padding:5px;">1</td>
-        <td align="left" style="padding:5px;">Pham Minh Chau</td>
-        <td align="left" style="padding:5px;">02/11/2020</td>
-        <td align="left" style="padding:5px;">Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing<br><a href="https://cs.stanford.edu/~matei/papers/2012/nsdi_spark.pdf">Paper</a> of prof. Matei Zaharia  </td>
+                <!--<td align="left" style="padding:5px;"><a target="blank" href="https://github.com/iDataVisualizationLab/CS5352/blob/master/talks/advanced_OS_presentation_chaupham.pptx">advanced_OS_presentation_chaupham.pptx</a> </td>-->
 
-        <td align="left" style="padding:5px;"><a target="blank" href="https://github.com/iDataVisualizationLab/CS5352/blob/master/talks/advanced_OS_presentation_chaupham.pptx">advanced_OS_presentation_chaupham.pptx</a> </td>
-        
-    </tr>
+            <!--</tr>-->
+        </tbody>
 
 
-    <tr bgcolor="#efe">
-        <td align="left" style="padding:5px;">2</td>
-        <td align="left" style="padding:5px;">?</td>
-        <td align="left" style="padding:5px;"></td>
-        <td align="left" style="padding:5px;"></td>
-    </tr>
+    <!--<tr bgcolor="#efe">-->
+        <!--<td align="left" style="padding:5px;">2</td>-->
+        <!--<td align="left" style="padding:5px;">?</td>-->
+        <!--<td align="left" style="padding:5px;"></td>-->
+        <!--<td align="left" style="padding:5px;"></td>-->
+    <!--</tr>-->
 
     </table>
-
+    <script type="text/javascript" src="js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="js/talk.js"></script>
 </body>
 </html>
