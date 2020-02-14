@@ -1,28 +1,28 @@
-Fullname	Date	Topic	Author	Paperlink	Projectlink
-Abraham Ogidi-Olu		An Adaptive Quantum-based Multi-objective Evolutionary Algorithm for Efficient Task Assignment in Distributed Systems	Jerzy Balicki	https://www.semanticscholar.org/paper/An-adaptive-quantum-based-multiobjective-algorithm-Balicki/792378143860d83bdcf51c8a7b88dd78913dd4bc	
-Aditi Misra					
-Anubhav Tiwari					
-Bao Dien Quoc Nguyen		AKIN: A Streaming Graph Partitioning Algorithm for Distributed Graph Storage Systems.	"Wei Zhang, Yong Chen, and Dong Dai"	https://ieeexplore.ieee.org/document/8411022	
-Benjamin Paul		Rethinking the Library OS from the Top Down	Donald E. Porter et al.	http://www.cs.unc.edu/~porter/pubs/p291-porter.pdf	
-Pham Minh Chau	2/11/2020	Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing	prof. Matei Zaharia	https://cs.stanford.edu/~matei/papers/2012/nsdi_spark.pdf	https://github.com/iDataVisualizationLab/CS5352/blob/master/talks/advanced_OS_presentation_chaupham.pptx
-Dhruv Chetan Mehta		Automated Performance Modeling of HPC Applications Using Machine Learning	"J. Sun, G. Sun, S. Zhan, J. Zhang and Y. Chen"	https://ieeexplore.ieee.org/abstract/document/8956059	
-Hao Minh Van					
-Justin Rodriguez		REPT: Reverse Debugging of Failures in Deployed Software	Anwar & Sally	https://www.usenix.org/system/files/osdi18-cui.pdf	
-Karishma Garikapalli		Efficient Massively Parallel Methods for Dynamic Programming	Sungjin Im	http://www.andrew.cmu.edu/user/moseleyb/papers/stoc17-main279.pdf	
-Lakshmi Sampath Somanath Pagolu		"Noria: dynamic, partially-stateful data-flow for high-performance web applications"	"Gjengset, Schwarzkopf et al."	https://www.usenix.org/system/files/osdi18-gjengset.pdf	
-Manisha Rajendra Wakase		REPT: Reverse Debugging of Failures in Deployed Software	Anwar & Sally	https://www.usenix.org/system/files/osdi18-cui.pdf	
-Ngan Vuong Thuy Nguyen		Automated Performance Modeling of HPC Applications Using Machine Learning	"J. Sun, G. Sun, S. Zhan, J. Zhang and Y. Chen"	https://ieeexplore.ieee.org/abstract/document/8956059	
-Sai Bhavesh Nooka					
-Sayan Maitra					
-Shwetha Bali Yadav					
-Siddhartha Ireddy		Task Scheduling in Big Data	"Kannan Govindarajan,Kannan Govindarajan, Supun Kamburugamuve, Pulasthi Wickramasinghe, Vibhatha Abeykoon, Geoffrey Fox"	https://ieeexplore.ieee.org/document/8441494	
-Sourav Verma					
-Supadchaya Puangpontip		Customizable and Extensible Deployment for Mobile/Cloud Applications	Ayat Qudah & Assel Abu-huq	https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-zhang.pdf	
-Swathi Bali Yadav					
-Vamsidhar Reddy Poothi					
-Vinh The Nguyen					
-Van Vung Pham					
-Yuanxu Xu					
-Zacharias E. Alaniz					
-Zekarias Getu Setotaw					
-Zulfiqar Ali Khan					
+Fullname	Date	SubmisionTime	Topic	Author	Paperlink	Projectlink
+Abraham Ogidi-Olu		2/14/2020	An Adaptive Quantum-based Multi-objective Evolutionary Algorithm for Efficient Task Assignment in Distributed Systems	Jerzy Balicki	https://www.semanticscholar.org/paper/An-adaptive-quantum-based-multiobjective-algorithm-Balicki/792378143860d83bdcf51c8a7b88dd78913dd4bc	
+Aditi Misra						
+Anubhav Tiwari		2/13/2020	Automated Performance Modeling of HPC Applications Using Machine Learning	"J. Sun, G. Sun, S. Zhan, J. Zhang and Y. Chen"	https://ieeexplore.ieee.org/abstract/document/8956059	
+Bao Dien Quoc Nguyen		2/12/2020	AKIN: A Streaming Graph Partitioning Algorithm for Distributed Graph Storage Systems.	"Wei Zhang, Yong Chen, and Dong Dai"	https://ieeexplore.ieee.org/document/8411022	
+Benjamin Paul		2/14/2020	Rethinking the Library OS from the Top Down	Donald E. Porter et al.	http://www.cs.unc.edu/~porter/pubs/p291-porter.pdf	
+Pham Minh Chau	2/11/2020	2/9/2020	Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing	prof. Matei Zaharia	https://cs.stanford.edu/~matei/papers/2012/nsdi_spark.pdf	https://github.com/iDataVisualizationLab/CS5352/blob/master/talks/advanced_OS_presentation_chaupham.pptx
+Dhruv Chetan Mehta		2/14/2020	Automated Performance Modeling of HPC Applications Using Machine Learning	"J. Sun, G. Sun, S. Zhan, J. Zhang and Y. Chen"	https://ieeexplore.ieee.org/abstract/document/8956059	
+Hao Minh Van						
+Justin Rodriguez		2/12/2020	REPT: Reverse Debugging of Failures in Deployed Software	Anwar & Sally	https://www.usenix.org/system/files/osdi18-cui.pdf	
+Karishma Garikapalli		2/13/2020	Efficient Massively Parallel Methods for Dynamic Programming	Sungjin Im	http://www.andrew.cmu.edu/user/moseleyb/papers/stoc17-main279.pdf	
+Lakshmi Sampath Somanath Pagolu		2/14/2020	"Noria: dynamic, partially-stateful data-flow for high-performance web applications"	"Gjengset, Schwarzkopf et al."	https://www.usenix.org/system/files/osdi18-gjengset.pdf	
+Manisha Rajendra Wakase		2/13/2020	REPT: Reverse Debugging of Failures in Deployed Software	Anwar & Sally	https://www.usenix.org/system/files/osdi18-cui.pdf	
+Ngan Vuong Thuy Nguyen		2/12/2020	Automated Performance Modeling of HPC Applications Using Machine Learning	"J. Sun, G. Sun, S. Zhan, J. Zhang and Y. Chen"	https://ieeexplore.ieee.org/abstract/document/8956059	
+Sai Bhavesh Nooka						
+Sayan Maitra						
+Shwetha Bali Yadav						
+Siddhartha Ireddy		2/14/2020	Task Scheduling in Big Data	"Kannan Govindarajan,Kannan Govindarajan, Supun Kamburugamuve, Pulasthi Wickramasinghe, Vibhatha Abeykoon, Geoffrey Fox"	https://ieeexplore.ieee.org/document/8441494	
+Sourav Verma						
+Supadchaya Puangpontip		2/13/2020	Customizable and Extensible Deployment for Mobile/Cloud Applications	Ayat Qudah & Assel Abu-huq	https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-zhang.pdf	
+Swathi Bali Yadav						
+Vamsidhar Reddy Poothi						
+Vinh The Nguyen						
+Van Vung Pham						
+Yuanxu Xu						
+Zacharias E. Alaniz						
+Zekarias Getu Setotaw						
+Zulfiqar Ali Khan						
