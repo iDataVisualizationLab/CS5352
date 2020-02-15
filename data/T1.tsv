@@ -13,7 +13,7 @@ Lakshmi Sampath Somanath Pagolu		2/14/2020	"Noria: dynamic, partially-stateful d
 Manisha Rajendra Wakase		2/13/2020	REPT: Reverse Debugging of Failures in Deployed Software	Anwar & Sally	https://www.usenix.org/system/files/osdi18-cui.pdf	
 Ngan Vuong Thuy Nguyen		2/12/2020	Ginseng: Keeping Secrets in Registers When You Distrust the Operating System	Min Hong Yun and Lin Zhong	https://www.ndss-symposium.org/wp-content/uploads/2019/02/ndss2019_01A-2_Yun_paper.pdf	
 Sai Bhavesh Nooka		2/15/2020	Splitting Interfaces: Making Trust Between Applications and Operating Systems Configurable.	Richard Ta-Min et al.	http://www.cse.psu.edu/~trj1/cse544-s10/papers/Proxos-OSDI2006-web.pdf	
-Sayan Maitra						
+Sayan Maitra			Machine-aware Atomic Broadcast Trees for Multicores	Ola Altiti & Ayah Abu Aqouleh	https://www.usenix.org/system/files/conference/osdi16/osdi16-kaestle.pdf	
 Shwetha Bali Yadav		2/14/2020	Arachne: Core-Aware Thread Management	Heba Jarrah & Rahaf Hammouri	https://www.usenix.org/system/files/osdi18-qin.pdf	
 Siddhartha Ireddy		2/14/2020	Task Scheduling in Big Data	"Kannan Govindarajan,Kannan Govindarajan, Supun Kamburugamuve, Pulasthi Wickramasinghe, Vibhatha Abeykoon, Geoffrey Fox"	https://ieeexplore.ieee.org/document/8441494	
 Sourav Verma						
@@ -23,6 +23,6 @@ Vamsidhar Reddy Poothi		2/15/2020	Minimizing Maximum Response Time and Delay Fac
 Vinh The Nguyen		2/14/2020	Ryoan: A Distributed Sandbox for Untrusted Computation on Secret Data	Tyler Hunt et al.	https://www.usenix.org/conference/osdi16/technical-sessions/presentation/hunt	
 Van Vung Pham		2/14/2020	SuperMIC: Analyzing Large Biological Datasets in Bioinformatics with Maximal Information Coefficient	prof. Dong Dai	: https://webpages.uncc.edu/ddai/papers/dong-tcbb.pdf	
 Yuanxu Xu						
-Zacharias E. Alaniz						
+Zacharias E. Alaniz		2/11/2020	REPT: Reverse Debugging of Failures in Deployed Software	Anwar & Sally	https://www.usenix.org/system/files/osdi18-cui.pdf	
 Zekarias Getu Setotaw						
-Zulfiqar Ali Khan						
+Zulfiqar Ali Khan		1/30/2020	Fair Online Scheduling for Sel?sh Jobs on Heterogeneous Machines	Sungjin Im and Janardhan Kulkarni	https://users.cs.duke.edu/~kulkarni/papers/spaa16.pdf	
