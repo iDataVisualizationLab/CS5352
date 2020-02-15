@@ -65,7 +65,7 @@ d3.tsv('data/T1.tsv').then(data=>{
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display')
-                        return `<p style="background-color: ${topicNet[d.Topic]&&topicNet[d.Topic].length>1?'#ff7983':'unset'}">${d.Topic}${d.Topic?`<br><a href="${d.Paperlink}">Paper</a> of ${d.Author} `:''}</p>`;
+                        return `<p style="background-color: ${colorTopic(d.Topic)}">${d.Topic}${d.Topic?`<br><a href="${d.Paperlink}">Paper</a> of ${d.Author} `:'----not submit----'}</p>`;
                     else
                         return d.Topic;
                 }
@@ -95,4 +95,13 @@ d3.tsv('data/T1.tsv').then(data=>{
                 }
             },
         ]});
+
+    function colorTopic (topic){
+        if (topic==''||topic===null)
+            return '#eeee71';
+        if (topicNet[topic]&&topicNet[topic].length>1)
+            return '#ff7983';
+        else
+            return 'unset';
+    }
 })
