@@ -11,7 +11,7 @@ Justin Rodriguez		2/12/2020	REPT: Reverse Debugging of Failures in Deployed Soft
 Karishma Garikapalli		2/13/2020	Efficient Massively Parallel Methods for Dynamic Programming	Sungjin Im	http://www.andrew.cmu.edu/user/moseleyb/papers/stoc17-main279.pdf	
 Lakshmi Sampath Somanath Pagolu		2/14/2020	"Noria: dynamic, partially-stateful data-flow for high-performance web applications"	"Gjengset, Schwarzkopf et al."	https://www.usenix.org/system/files/osdi18-gjengset.pdf	
 Manisha Rajendra Wakase		2/13/2020	REPT: Reverse Debugging of Failures in Deployed Software	Anwar & Sally	https://www.usenix.org/system/files/osdi18-cui.pdf	
-Ngan Vuong Thuy Nguyen		2/12/2020	Automated Performance Modeling of HPC Applications Using Machine Learning	"J. Sun, G. Sun, S. Zhan, J. Zhang and Y. Chen"	https://ieeexplore.ieee.org/abstract/document/8956059	
+Ngan Vuong Thuy Nguyen		2/12/2020	Ginseng: Keeping Secrets in Registers When You Distrust the Operating System	Min Hong Yun and Lin Zhong	https://www.ndss-symposium.org/wp-content/uploads/2019/02/ndss2019_01A-2_Yun_paper.pdf	
 Sai Bhavesh Nooka		2/15/2020	Splitting Interfaces: Making Trust Between Applications and Operating Systems Configurable.	Richard Ta-Min et al.	http://www.cse.psu.edu/~trj1/cse544-s10/papers/Proxos-OSDI2006-web.pdf	
 Sayan Maitra						
 Shwetha Bali Yadav		2/14/2020	Arachne: Core-Aware Thread Management	Heba Jarrah & Rahaf Hammouri	https://www.usenix.org/system/files/osdi18-qin.pdf	
