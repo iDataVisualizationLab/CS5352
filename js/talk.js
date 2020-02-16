@@ -52,7 +52,7 @@ d3.tsv('data/T1.tsv').then(data=>{
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display') {
-                        return d.Fullname;
+                        return d.Fullname+(d.Date.next?'<span style="color: #d9290b"> <<< YOUR TURN </span>':'');
                     }
                     return d.Fullname;
                 }
@@ -64,7 +64,7 @@ d3.tsv('data/T1.tsv').then(data=>{
                 className:'angle',
                 "render": function ( d, type, row, meta ) {
                     if (type=='display') {
-                        return d.Date.key + (d.Date.next?'<span style="color: #d9290b"> <<< YOUR TURN </span>':'');
+                        return d.Date.key;
                     }
                     else
                         return +d.Date.value;
