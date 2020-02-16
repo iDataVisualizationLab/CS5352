@@ -5,10 +5,10 @@ var parseTime = d3.timeParse("%m/%d/%Y");
 d3.tsv('data/T1.tsv').then(data=>{
     data.forEach(d=>d.Date={key:d.Date,value:d.Date===""?Infinity:parseTime(d.Date)});
     data.push({
-        Fullname:'✿✿✿✿',
+        Fullname:'&#x273F &#x273F &#x273F &#x273F',
         Date: {key:'3/14/2020',value:parseTime('3/14/2020')},
         SubmisionTime:'',
-        Topic:'✿✿✿✿✿✿✿✿✿✿✿✿✿Spring Break March 14–22 ✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿',
+        Topic:'&#x273F&#x273F&#x273F&#x273F&#x273F&#x273F&#x273F&#x273F&#x273F Spring Break March 14-22 &#x273F&#x273F&#x273F&#x273F&#x273F&#x273F&#x273F&#x273F&#x273F',
         Author:'TTU',
         Paperlink:'https://www.depts.ttu.edu/officialpublications/calendar/19-20_cal_onepage.pdf',
         Projectlink: 'https://www.depts.ttu.edu/officialpublications/calendar/19-20_cal_onepage.pdf'
@@ -74,7 +74,7 @@ d3.tsv('data/T1.tsv').then(data=>{
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display')
-                        return `<p style="background-color: ${colorTopic(d.Topic)}">${d.Topic}${d.Topic?`<br><a href="${d.Paperlink}">Paper</a> of ${d.Author} `:'----not submit----'}</p>`;
+                        return `<p style="background-color: ${colorTopic(d)}">${d.Topic}${d.Topic?`<br><a href="${d.Paperlink}">Paper</a> of ${d.Author} `:'----not submit----'}</p>`;
                     else
                         return d.Topic;
                 }
@@ -105,12 +105,17 @@ d3.tsv('data/T1.tsv').then(data=>{
             },
         ]});
 
-    function colorTopic (topic){
-        if (topic==''||topic===null)
-            return '#eeee71';
-        if (topicNet[topic]&&topicNet[topic].length>1)
-            return '#ff7983';
-        else
-            return 'unset';
+    function colorTopic (d){
+        topic = d.Topic
+        author = d.Author
+        if (author!=='TTU') {
+            if (topic == '' || topic === null)
+                return '#eeee71';
+            if (topicNet[topic] && topicNet[topic].length > 1)
+                return '#ff7983';
+            else
+                return 'unset';
+        }
+        return '#13d9b7'
     }
 })
