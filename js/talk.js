@@ -15,6 +15,8 @@ d3.tsv('data/T1.tsv').then(data=>{
     });
     let topicNet = d3.nest().key(d=>d.Topic).object(data.filter(d=>d.Topic!==''));
     data.sort((a,b)=>a.Date.value-b.Date.value).forEach((d,i)=>d.index = i+1);
+    let marker = data.find(d=>d.Date.value>new Date());
+    data.filter(d=>marker.Date.key===d.Date.key).forEach(d=>d.Date.next=true);
     // d3.select('#listHolder tbody')
     //     .selectAll('tr')
     //     .data(data)
@@ -62,7 +64,7 @@ d3.tsv('data/T1.tsv').then(data=>{
                 className:'angle',
                 "render": function ( d, type, row, meta ) {
                     if (type=='display') {
-                        return d.Date.key;
+                        return d.Date.key + (d.Date.next?'<span style="color: #d9290b"> <<< YOUR TURN </span>':'');
                     }
                     else
                         return +d.Date.value;
