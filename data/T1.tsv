@@ -10,7 +10,7 @@ Hao Minh Van		2/14/2020	A Comparison of Approaches to Large-Scale Data Analysis	
 Justin Rodriguez		2/12/2020	REPT: Reverse Debugging of Failures in Deployed Software	Anwar & Sally	https://www.usenix.org/system/files/osdi18-cui.pdf	
 Karishma Garikapalli		2/13/2020	Efficient Massively Parallel Methods for Dynamic Programming	Sungjin Im	http://www.andrew.cmu.edu/user/moseleyb/papers/stoc17-main279.pdf	
 Lakshmi Sampath Somanath Pagolu		2/14/2020	"Noria: dynamic, partially-stateful data-flow for high-performance web applications"	"Gjengset, Schwarzkopf et al."	https://www.usenix.org/system/files/osdi18-gjengset.pdf	
-Manisha Rajendra Wakase		2/13/2020	REPT: Reverse Debugging of Failures in Deployed Software	Anwar & Sally	https://www.usenix.org/system/files/osdi18-cui.pdf	
+Manisha Rajendra Wakase		2/15/2020	Ironclad Apps: End-to-End Security via Automated Full-System Verification	Chris Hawblitzel et al.	https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-hawblitzel.pdf	
 Ngan Vuong Thuy Nguyen		2/12/2020	Ginseng: Keeping Secrets in Registers When You Distrust the Operating System	Min Hong Yun and Lin Zhong	https://www.ndss-symposium.org/wp-content/uploads/2019/02/ndss2019_01A-2_Yun_paper.pdf	
 Sai Bhavesh Nooka		2/15/2020	Splitting Interfaces: Making Trust Between Applications and Operating Systems Configurable.	Richard Ta-Min et al.	http://www.cse.psu.edu/~trj1/cse544-s10/papers/Proxos-OSDI2006-web.pdf	
 Sayan Maitra			Machine-aware Atomic Broadcast Trees for Multicores	Ola Altiti & Ayah Abu Aqouleh	https://www.usenix.org/system/files/conference/osdi16/osdi16-kaestle.pdf	
@@ -21,8 +21,8 @@ Supadchaya Puangpontip		2/13/2020	Customizable and Extensible Deployment for Mob
 Swathi Bali Yadav		2/14/2020	Light-Weight Contexts: An OS Abstraction for Safety and Performance	ujain AL-Smadi & Abdallh Alshorman	https://www.usenix.org/system/files/conference/osdi16/osdi16-litton.pdf	
 Vamsidhar Reddy Poothi		2/15/2020	Minimizing Maximum Response Time and Delay Factor in Broadcast Scheduling	"Chandra Chekuri, Sungjin Im and Benjamin Moseley"		
 Vinh The Nguyen		2/14/2020	Ryoan: A Distributed Sandbox for Untrusted Computation on Secret Data	Tyler Hunt et al.	https://www.usenix.org/conference/osdi16/technical-sessions/presentation/hunt	
-Van Vung Pham		2/14/2020	SuperMIC: Analyzing Large Biological Datasets in Bioinformatics with Maximal Information Coefficient	prof. Dong Dai	: https://webpages.uncc.edu/ddai/papers/dong-tcbb.pdf	
-Yuanxu Xu						
+Van Vung Pham		2/14/2020	SuperMIC: Analyzing Large Biological Datasets in Bioinformatics with Maximal Information Coefficient	prof. Dong Dai	https://webpages.uncc.edu/ddai/papers/dong-tcbb.pdf	
+Yuanxu Xu		2/15/2020	Dynamo: Amazon’s Highly Available Key-value Store	Giuseppe DeCandia et al.	https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf	
 Zacharias E. Alaniz		2/11/2020	REPT: Reverse Debugging of Failures in Deployed Software	Anwar & Sally	https://www.usenix.org/system/files/osdi18-cui.pdf	
 Zekarias Getu Setotaw						
 Zulfiqar Ali Khan		1/30/2020	Fair Online Scheduling for Selfish Jobs on Heterogeneous Machines	Sungjin Im and Janardhan Kulkarni	https://users.cs.duke.edu/~kulkarni/papers/spaa16.pdf	
