@@ -4,6 +4,15 @@ var parseTime = d3.timeParse("%m/%d/%Y");
 // load data
 d3.tsv('data/T1.tsv').then(data=>{
     data.forEach(d=>d.Date={key:d.Date,value:d.Date===""?Infinity:parseTime(d.Date)});
+    data.push({
+        Fullname:'✿✿✿✿',
+        Date: {key:'3/14/2020',value:parseTime('3/14/2020')},
+        SubmisionTime:'',
+        Topic:'✿✿✿✿✿✿✿✿✿✿✿✿✿Spring Break March 14–22 ✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿✿',
+        Author:'TTU',
+        Paperlink:'https://www.depts.ttu.edu/officialpublications/calendar/19-20_cal_onepage.pdf',
+        Projectlink: 'https://www.depts.ttu.edu/officialpublications/calendar/19-20_cal_onepage.pdf'
+    });
     let topicNet = d3.nest().key(d=>d.Topic).object(data.filter(d=>d.Topic!==''));
     data.sort((a,b)=>a.Date.value-b.Date.value).forEach((d,i)=>d.index = i+1);
     // d3.select('#listHolder tbody')
