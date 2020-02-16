@@ -100,7 +100,7 @@ d3.tsv('data/T1.tsv').then(data=>{
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display')
-                        return `<a target="blank" href="${d.Projectlink}"><i class="fa fa-cloud-download"></i></a>`;
+                        return d.Projectlink==''?'':`<a target="blank" href="${d.Projectlink}"><i class="fa fa-cloud-download"></i></a>`;
                     else
                         return d.Projectlink;
                 }
