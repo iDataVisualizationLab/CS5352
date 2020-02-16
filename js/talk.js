@@ -3,7 +3,7 @@ var parseTime = d3.timeParse("%m/%d/%Y");
 
 // load data
 d3.tsv('data/T1.tsv').then(data=>{
-    data.forEach(d=>d.Date={key:d.Date,value:d.Date===""?Infinity:parseTime(d.date)});
+    data.forEach(d=>d.Date={key:d.Date,value:d.Date===""?Infinity:parseTime(d.Date)});
     let topicNet = d3.nest().key(d=>d.Topic).object(data.filter(d=>d.Topic!==''));
     data.sort((a,b)=>a.Date.value-b.Date.value).forEach((d,i)=>d.index = i+1);
     // d3.select('#listHolder tbody')
