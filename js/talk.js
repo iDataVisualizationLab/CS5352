@@ -52,7 +52,7 @@ d3.tsv('data/T1.tsv').then(data=>{
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display') {
-                        return d.Fullname+(d.Date.next?'<span style="color: #d9290b"> <<< UPCOMING </span>':'');
+                        return d.Fullname+(d.Date.next?'<span style="color: #d9290b"> < Next presenter > </span>':'');
                     }
                     return d.Fullname;
                 }
