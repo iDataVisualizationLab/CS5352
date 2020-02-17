@@ -2,8 +2,11 @@
 var parseTime = d3.timeParse("%m/%d/%Y");
 
 // load data
-d3.tsv('data/T1.tsv').then(data=>{
-    data.forEach(d=>d.Date={key:d.Date,value:d.Date===""?Infinity:parseTime(d.Date)});
+d3.json('data/students.json').then(function (data) {
+    studenDetail = {};
+    data.forEach(d=>studenDetail[d.full_name] = d);
+    d3.tsv('data/T1.tsv').then(data=>{
+    data.forEach((d,i)=>(d.Date={key:d.Date,value:d.Date===""?Infinity:parseTime(d.Date)}));
     data.push({
         Fullname:'&#x273F &#x273F &#x273F &#x273F',
         Date: {key:'3/14/2020',value:parseTime('3/14/2020')},
@@ -52,7 +55,7 @@ d3.tsv('data/T1.tsv').then(data=>{
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display') {
-                        return d.Fullname+(d.Date.next?'<span style="color: #d9290b">--Next presenter--</span>':'');
+                        return (studenDetail[d.Fullname]?`<img alt="${d.Fullname}" class="clip-circle" height="100" src="${studenDetail[d.Fullname].photo}">`:'') +d.Fullname+(d.Date.next?'<span style="color: #d9290b">--Next presenter--</span>':'');
                     }
                     return d.Fullname;
                 }
@@ -120,4 +123,4 @@ d3.tsv('data/T1.tsv').then(data=>{
         }
         return '#13d9b7'
     }
-})
+})})

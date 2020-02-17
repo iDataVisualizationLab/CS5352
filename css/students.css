@@ -52,3 +52,14 @@
 .card-info-name2 {
     text-align: center;
 }
+.clip-circle {
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    left: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+    line-height: 42px;
+    padding-right: 5px;
+}
