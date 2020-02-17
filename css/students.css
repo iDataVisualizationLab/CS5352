@@ -53,13 +53,12 @@
     text-align: center;
 }
 .clip-circle {
-    width: 42px;
-    height: 42px;
+    width: 64px;
+    height: 64px;
     overflow: hidden;
     left: 15px;
     display: inline-block;
     vertical-align: middle;
     border-radius: 50%;
-    line-height: 42px;
     padding-right: 5px;
 }
