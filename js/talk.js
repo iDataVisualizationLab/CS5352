@@ -55,7 +55,7 @@ d3.json('data/students.json').then(function (data) {
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display') {
-                        return (studenDetail[d.Fullname]?`<img alt="${d.Fullname}" class="clip-circle" height="100" src="${studenDetail[d.Fullname].photo}">`:'') +d.Fullname+(d.Date.next?'<span style="color: #d9290b">--Next presenter--</span>':'');
+                        return (studenDetail[d.Fullname]?`<img alt="${d.Fullname}" class="clip-circle" src="${studenDetail[d.Fullname].photo}">`:'') +d.Fullname+(d.Date.next?'<span style="color: #d9290b">--Next presenter--</span>':'');
                     }
                     return d.Fullname;
                 }
