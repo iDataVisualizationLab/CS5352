@@ -6,7 +6,7 @@ Bao Dien Quoc Nguyen	3/5/2020	2/12/2020	AKIN: A Streaming Graph Partitioning Alg
 Benjamin Paul	3/12/2020	2/14/2020	Rethinking the Library OS from the Top Down	Donald E. Porter et al.	http://www.cs.unc.edu/~porter/pubs/p291-porter.pdf	
 Pham Minh Chau	2/11/2020	2/9/2020	Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing	prof. Matei Zaharia	https://cs.stanford.edu/~matei/papers/2012/nsdi_spark.pdf	https://github.com/iDataVisualizationLab/CS5352/blob/master/talks/advanced_OS_presentation_chaupham.pptx
 Dhruv Chetan Mehta	3/24/2020	2/14/2020	Automated Performance Modeling of HPC Applications Using Machine Learning	"J. Sun, G. Sun, S. Zhan, J. Zhang and Y. Chen"	https://ieeexplore.ieee.org/abstract/document/8956059	
-Hao Minh Van	3/12/2020	2/14/2020	Change topic			
+Hao Minh Van	3/12/2020	2/14/2020	Marcher: A Heterogeneous System Supporting Energy-Aware High Performance Computing and Big Data Analytics	"Z. L. Zong, R. Ge, Q. J. Gu"	https://www.sciencedirect.com/science/article/pii/S221457961630048X?via%3Dihub	
 Justin Rodriguez	3/3/2020	2/16/2020	Energy efficient scheduling of parallelizable jobs	"Kyle Fox, Sungjin Im, and Benjamin Moseley."	https://www.sciencedirect.com/science/article/pii/S030439751830118X	
 Karishma Garikapalli	2/25/2020	2/13/2020	Efficient Massively Parallel Methods for Dynamic Programming	Sungjin Im	http://www.andrew.cmu.edu/user/moseleyb/papers/stoc17-main279.pdf	
 Lakshmi Sampath Somanath Pagolu	3/24/2020	2/14/2020	"Noria: dynamic, partially-stateful data-flow for high-performance web applications"	"Gjengset, Schwarzkopf et al."	https://www.usenix.org/system/files/osdi18-gjengset.pdf	
