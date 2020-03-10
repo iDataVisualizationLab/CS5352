@@ -61,7 +61,7 @@ d3.json('data/students.json').then(function (data) {
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display')
-                        return `<p style="background-color: ${colorTopic(d)}">${d.Topic}${d.Topic?`<br><a href="${d.Paperlink}">Paper</a> of ${d.Author} `:'----not submit----'}</p>`;
+                        return `<p style="background-color: ${colorTopic(d)}">${d.Topic}${d.Topic?` `:'----not submit----'}</p>`;
                     else
                         return d.Topic;
                 }
