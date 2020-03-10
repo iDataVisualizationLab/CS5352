@@ -6,7 +6,7 @@ d3.json('data/students.json').then(function (data) {
     studenDetail = {};
     data.forEach(d=>studenDetail[d.full_name] = d);
     d3.tsv('data/T1.tsv').then(data=>{
-    data.forEach((d,i)=>(d.Date={key:d.Date,value:d.Date===""?Infinity:parseTime(d.Date)}));
+    data.forEach((d,i)=>(d.Date={key:d.Date,value:d.Date===""?Infinity:(temp = parseTime(d.Date),temp.setHours(12),temp)}));
     data.push({
         Fullname:'&#x273F &#x273F &#x273F &#x273F',
         Date: {key:'3/14/2020',value:parseTime('3/14/2020')},
