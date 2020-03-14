@@ -104,7 +104,7 @@ d3.json('data/students.json').then(function (data) {
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display')
-                        return d.Projectlink==''?'<p style="background-color: red">\'----not submit----\'</p>':`<a target="blank" href="${d.Projectlink}"><i class="fa fa-cloud-download"></i></a>`;
+                        return d.Projectlink==''?'<p style="background-color: red">\'----not submit----\'</p>':`<a target="blank" href="https://github.com/iDataVisualizationLab/CS5352/blob/master/talks/${d.Projectlink}"><i class="fa fa-cloud-download"></i></a>`;
                     else
                         return d.Projectlink;
                 }
