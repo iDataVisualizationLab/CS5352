@@ -14,7 +14,8 @@ d3.json('data/students.json').then(function (data) {
         Topic:'&#x273F&#x273F&#x273F&#x273F&#x273F&#x273F&#x273F&#x273F&#x273F Spring Break March 14-22 &#x273F&#x273F&#x273F&#x273F&#x273F&#x273F&#x273F&#x273F&#x273F',
         Author:'TTU',
         Paperlink:'https://www.depts.ttu.edu/officialpublications/calendar/19-20_cal_onepage.pdf',
-        Projectlink: 'https://www.depts.ttu.edu/officialpublications/calendar/19-20_cal_onepage.pdf'
+        Projectlink: 'https://www.depts.ttu.edu/officialpublications/calendar/19-20_cal_onepage.pdf',
+        Late: '',
     });
     let topicNet = d3.nest().key(d=>d.Topic).object(data.filter(d=>d.Topic!==''));
     data.sort((a,b)=>a.Date.value-b.Date.value).forEach((d,i)=>d.index = i+1);
@@ -103,11 +104,23 @@ d3.json('data/students.json').then(function (data) {
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display')
-                        return d.Projectlink==''?'':`<a target="blank" href="${d.Projectlink}"><i class="fa fa-cloud-download"></i></a>`;
+                        return d.Projectlink==''?'<p style="background-color: red">\'----not submit----\'</p>':`<a target="blank" href="${d.Projectlink}"><i class="fa fa-cloud-download"></i></a>`;
                     else
                         return d.Projectlink;
                 }
             },
+            {   targets: 6,
+                title: 'Late',
+                orderable: true,
+                "searchable": false,
+                "data": null,
+                "render": function ( d, type, row, meta ) {
+                    if (type=='display')
+                        return d.Late||'';
+                    else
+                        return d.Late;
+                }
+            }
         ]});
 
     function colorTopic (d){

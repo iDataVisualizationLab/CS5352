@@ -77,7 +77,7 @@ d3.json('data/students.json').then(function (data) {
                     else
                         return d.Projectlink;
                 }
-            },
+            }
         ]});
 
     function colorTopic (d){
