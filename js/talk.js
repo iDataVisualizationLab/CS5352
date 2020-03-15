@@ -1,12 +1,16 @@
 // Parse the date / time
 var parseTime = d3.timeParse("%m/%d/%Y");
-
+var submisionTime_mark = parseTime("3/13/2020");
 // load data
 d3.json('data/students.json').then(function (data) {
     studenDetail = {};
     data.forEach(d=>studenDetail[d.full_name] = d);
     d3.tsv('data/T1.tsv').then(data=>{
-    data.forEach((d,i)=>(d.Date={key:d.Date,value:d.Date===""?Infinity:(temp = parseTime(d.Date),temp.setHours(12),temp)}));
+    data.forEach((d,i)=>{
+        d.Date={key:d.Date,value:d.Date===""?Infinity:(temp = parseTime(d.Date),temp.setHours(12),temp)};
+        d["SubmisionTimeProject"] = d["SubmisionTimeProject"]===""?new Date():parseTime(d["SubmisionTimeProject"]);
+        d.Late = daysBetween(submisionTime_mark, d["SubmisionTimeProject"]);
+    });
     data.push({
         Fullname:'&#x273F &#x273F &#x273F &#x273F',
         Date: {key:'3/14/2020',value:parseTime('3/14/2020')},
@@ -15,7 +19,7 @@ d3.json('data/students.json').then(function (data) {
         Author:'TTU',
         Paperlink:'https://www.depts.ttu.edu/officialpublications/calendar/19-20_cal_onepage.pdf',
         Projectlink: 'https://www.depts.ttu.edu/officialpublications/calendar/19-20_cal_onepage.pdf',
-        Late: '',
+        Late: 0,
     });
     let topicNet = d3.nest().key(d=>d.Topic).object(data.filter(d=>d.Topic!==''));
     data.sort((a,b)=>a.Date.value-b.Date.value).forEach((d,i)=>d.index = i+1);
@@ -116,7 +120,7 @@ d3.json('data/students.json').then(function (data) {
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display')
-                        return d.Late||'';
+                        return d.Late>0?`-${d.Late}%`:'';
                     else
                         return d.Late;
                 }
@@ -137,3 +141,18 @@ d3.json('data/students.json').then(function (data) {
         return '#13d9b7'
     }
 })})
+
+function daysBetween(first, second) {
+
+    // Copy date parts of the timestamps, discarding the time parts.
+    var one = new Date(first.getFullYear(), first.getMonth(), first.getDate());
+    var two = new Date(second.getFullYear(), second.getMonth(), second.getDate());
+
+    // Do the math.
+    var millisecondsPerDay = 1000 * 60 * 60 * 24;
+    var millisBetween = two.getTime() - one.getTime();
+    var days = millisBetween / millisecondsPerDay;
+
+    // Round down.
+    return Math.floor(days);
+}

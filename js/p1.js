@@ -90,7 +90,7 @@ d3.json('data/students.json').then(function (data) {
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display')
-                        return d.Late?`-${d.Late}%`:'';
+                        return d.Late>0?`-${d.Late}%`:'';
                     else
                         return d.Late;
                 }
