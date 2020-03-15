@@ -1,12 +1,17 @@
 // Parse the date / time
 var parseTime = d3.timeParse("%m/%d/%Y");
 
+var submisionTime_mark = parseTime("3/7/2020");
 // load data
 d3.json('data/students.json').then(function (data) {
     studenDetail = {};
     data.forEach(d=>studenDetail[d.full_name] = d);
     d3.tsv('data/P1.tsv').then(data=>{
-    data.forEach((d,i)=>(d.Date={key:d.Date,value:d.Date===""?Infinity:(temp = parseTime(d.Date),temp.setHours(12),temp)}));
+    data.forEach((d,i)=>{
+        d.Date={key:d.Date,value:d.Date===""?Infinity:(temp = parseTime(d.Date),temp.setHours(12),temp)}
+        d["SubmisionTime"] = d["SubmisionTime"]===""?new Date():parseTime(d["SubmisionTime"]);
+        d.Late = daysBetween(submisionTime_mark, d["SubmisionTime"]);
+        });
 
     let topicNet = d3.nest().key(d=>d.Topic).object(data.filter(d=>d.Topic!==''));
     data.sort((a,b)=>a.Date.value-b.Date.value).forEach((d,i)=>d.index = i+1);
@@ -77,6 +82,18 @@ d3.json('data/students.json').then(function (data) {
                     else
                         return d.Projectlink;
                 }
+            },
+            {   targets: 5,
+                title: 'Late',
+                orderable: true,
+                "searchable": false,
+                "data": null,
+                "render": function ( d, type, row, meta ) {
+                    if (type=='display')
+                        return d.Late?`-${d.Late}%`:'';
+                    else
+                        return d.Late;
+                }
             }
         ]});
 
@@ -94,3 +111,18 @@ d3.json('data/students.json').then(function (data) {
         return '#13d9b7'
     }
 })})
+
+function daysBetween(first, second) {
+
+    // Copy date parts of the timestamps, discarding the time parts.
+    var one = new Date(first.getFullYear(), first.getMonth(), first.getDate());
+    var two = new Date(second.getFullYear(), second.getMonth(), second.getDate());
+
+    // Do the math.
+    var millisecondsPerDay = 1000 * 60 * 60 * 24;
+    var millisBetween = two.getTime() - one.getTime();
+    var days = millisBetween / millisecondsPerDay;
+
+    // Round down.
+    return Math.floor(days);
+}
