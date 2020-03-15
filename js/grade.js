@@ -22,7 +22,7 @@ var y = d3.scaleLinear().range([height, 0]);
 var yAxis= d3.scaleLinear().range([height, 0]);
 var yP1domain = height*2.1;
 var yPAxis = height*1.95;
-var yP1= d3.scaleLinear().range([yP1domain, 60]).domain([0, 22]);
+var yP1= d3.scaleLinear().range([height, 60]).domain([0, 22]);
 var yPA= d3.scaleLinear().range([yPAxis, 100]).domain([0, 22]);
 let count = 0;
 
@@ -122,7 +122,7 @@ function main(){
             data[d.Students].array.nickname =data2[d.Students].Nickname;
             data[d.Students].array.group = getCategoty(data2[d.Students].Program);
 
-            // data[d.Students].array.T1_score = parseFloat(data2[d.Students].T1_score/5);
+            data[d.Students].array.T1_score = parseFloat(data2[d.Students].T1_score);
             // data[d.Students].array.T1_audience = parseFloat(data2[d.Students].T1_audience);
             // data[d.Students].array.P1_score = parseFloat(data2[d.Students].P1_score*3/10);
             // data[d.Students].array.P1_audience = parseFloat(data2[d.Students].P1_audience?data2[d.Students].P1_audience:0);
@@ -457,7 +457,8 @@ function main(){
                 'value':nod1.nickname,
                 'data':nod1.score,
                 'score':aData[i].T1_score,
-                'audience':aData[i].T1_audience});
+                // 'audience':aData[i].T1_audience
+            });
             // console.log(nodes_search);
 
 
@@ -483,7 +484,7 @@ function main(){
             nodeP11.group = aData[i].group;
             nodeP11.score = aData[i].score;
             nodeP11.T1_score = aData[i].T1_score;
-            nodeP11.T1_audience = aData[i].T1_audience;
+            // nodeP11.T1_audience = aData[i].T1_audience;
             // nodeP11.P1_report = aData[i].P1_report;
             nodeP11.date = aData[i].date;
             nodeP11.image = aData[i].image;
@@ -498,7 +499,7 @@ function main(){
             nodeP12.group = aData[i].group;
             nodeP12.score = aData[i].score;
             nodeP12.T1_score = aData[i].T1_score;
-            nodeP12.T1_audience = aData[i].T1_audience;
+            // nodeP12.T1_audience = aData[i].T1_audience;
             // nodeP12.P1_report = aData[i].P1_report;
             nodeP12.date = aData[i].date;
             nodeP12.image = aData[i].image;
@@ -596,9 +597,9 @@ function main(){
             var p0 = nodes[i].score;
             if (p0>10)
                 p0=10;
-            var p1 = nodesP1[i].T1_score+nodesP1[i].T1_audience;
-            var p2 = nodesP2[i].P1_score+nodesP2[i].P1_audience+nodesP2[i].P1_teamEvaluation;
-            var p3 = nodesP3[i].P2_sketch + nodesP3[i].P2_userStudy;
+            var p1 = nodesP1[i].T1_score||0;
+            var p2 = (nodesP2[i].P1_score+nodesP2[i].P1_audience+nodesP2[i].P1_teamEvaluation)||0;
+            var p3 = (nodesP3[i].P2_sketch + nodesP3[i].P2_userStudy)||0;
             // +nodesP3[i].P3_talk+nodesP3[i].P3_report +nodesP3[i].P3_review;
             var sum= p0+p1+p2+p3;
             var finalGrade = " ";
@@ -943,15 +944,15 @@ function textP1(index){
         .attr("y", nodesP1[index].y-12 ? nodesP1[index].y-12 : 0)
         .text("T1 score: "+($.isNumeric(nodesP1[index].T1_score) ? (nodesP1[index].T1_score + "%") : "N/A"));
 
-    svg.append("text")
-        .attr("class", "textP1")
-        .style("font-size", "13px")
-        .attr("text-anchor", "left")
-        .style("text-shadow", "1px 1px 0 rgba(200, 200, 200, 0.9")
-        .attr("fill", "#000")
-        .attr("x", radius+nodesP1[index].x+20 ? radius+nodesP1[index].x+20 :0)
-        .attr("y", nodesP1[index].y+3 ? nodesP1[index].y+3 : 0)
-        .text("T1 audience evaluation: "+($.isNumeric(nodesP1[index].T1_audience) ? (nodesP1[index].T1_audience + "%") : "N/A"));
+    // svg.append("text")
+    //     .attr("class", "textP1")
+    //     .style("font-size", "13px")
+    //     .attr("text-anchor", "left")
+    //     .style("text-shadow", "1px 1px 0 rgba(200, 200, 200, 0.9")
+    //     .attr("fill", "#000")
+    //     .attr("x", radius+nodesP1[index].x+20 ? radius+nodesP1[index].x+20 :0)
+    //     .attr("y", nodesP1[index].y+3 ? nodesP1[index].y+3 : 0)
+    //     .text("T1 audience evaluation: "+($.isNumeric(nodesP1[index].T1_audience) ? (nodesP1[index].T1_audience + "%") : "N/A"));
 
 
     // Project 1
@@ -1253,11 +1254,11 @@ function tickedT1() {
     for (var i=0;i<nodesP1.length;i=i+2){
         if (document.getElementById("checkboxP1").checked){
             nodesP1[i].x = secondGroupX;
-            if ((nodesP1[i].T1_score+nodesP1[i].T1_audience)){
-                nodesP1[i].y = yP1((nodesP1[i].T1_score+nodesP1[i].T1_audience))
+            if ((nodesP1[i].T1_score)){
+                nodesP1[i].y = yP1((nodesP1[i].T1_score))
             }
             else {
-                nodesP1[i].y = yP1(11);
+                nodesP1[i].y = yP1(0);
             }
         }
         else{
@@ -1358,7 +1359,7 @@ function tickedP2() {
             var yy = (nodesP2[i].P1_score+nodesP2[i].P1_audience + nodesP2[i].P1_teamEvaluation);
             // +nodesP2[i].P2_talk+nodesP2[i].P2_report  +nodesP2[i].P2_review;
             // console.log(yy)
-            nodesP2[i].y = exist? yP1(yy/33*22): yP1(11);  // 35% compared to 20%
+            nodesP2[i].y = exist? yP1(yy/33*22): yP1(0);  // 35% compared to 20%
         }
         else{
             nodesP2[i].x = x(nodesP2[i].date);
@@ -1389,7 +1390,7 @@ function tickedP3() {
             var yy = nodesP3[i].P2_sketch + nodesP3[i].P2_userStudy
             // +nodesP3[i].P3_talk+nodesP3[i].P3_report +nodesP3[i].P3_review;
 
-            nodesP3[i].y = yy? getY(yy) : yP1(11);  // 5% compared to 22%
+            nodesP3[i].y = yy? getY(yy) : yP1(0);  // 5% compared to 22%
 
             function getY(yy){
                 if (yy === 11){
