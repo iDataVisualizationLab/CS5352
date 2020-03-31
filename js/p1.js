@@ -11,6 +11,7 @@ d3.json('data/students.json').then(function (data) {
     data.forEach((d,i)=>{
         d.Date={key:d.Date,value:d.Date===""?Infinity:(temp = parseTime(d.Date),temp.setHours(12),temp)}
         d["SubmisionTime"] = d["SubmisionTime"]===""?new Date():parseTime(d["SubmisionTime"]);
+        d["isdone"] = d["SubmissionProject"]!=="";
         d["SubmissionProject"] = d["SubmissionProject"]===""?new Date():parseTime(d["SubmissionProject"]);
         d.Late = daysBetween(submisionTime_mark, d["SubmisionTime"])*2;
         d.LateProject = daysBetween(submisionProjectTime_mark, d["SubmissionProject"])*2;
@@ -23,7 +24,7 @@ d3.json('data/students.json').then(function (data) {
 
     $('#listHolder').DataTable({
         data: data,
-        "order": [[2, "asc"]],
+        "order": [[1, "asc"]],
         "pageLength": 50,
         "columnDefs": [
             {   targets: 0,
@@ -51,16 +52,16 @@ d3.json('data/students.json').then(function (data) {
                 }
             },
             {   targets: 2,
-                title: "Present date",
+                title: "Status",
                 orderable: true,
                 "data": null,
                 className:'angle',
                 "render": function ( d, type, row, meta ) {
                     if (type=='display') {
-                        return d.Date.key;
+                        return d.isdone?'Finish':'';
                     }
                     else
-                        return +d.Date.value;
+                        return d.isdone;
                 }
             },
             {   targets: 3,
