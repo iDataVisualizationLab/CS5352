@@ -113,7 +113,7 @@ d3.json('data/students.json').then(function (data) {
                             return d.Late;
                     }
             },
-            {   targets: 6,
+            {   targets: 7,
                 title: 'Late submit project',
                 orderable: true,
                 "searchable": false,
