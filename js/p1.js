@@ -102,25 +102,28 @@ d3.json('data/students.json').then(function (data) {
                 }
             },
             {   targets: 6,
-                title: 'Late',
+                title: 'Late submit topic',
                 orderable: true,
                 "searchable": false,
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type == 'display'){
-                        latetotal = d.Late+d.LateProject;
-                        str = d.Late > 0 ? `-${d.Late}%` : '';
-                        if(str!=="")
-                            str+="(submit topic) "
-                        str+= d.LateProject > 0 ? `-${d.LateProject}%` : '';
-                        if(d.LateProject)
-                            str+=`(submit result)`;
-                        if(d.Late&&d.LateProject)
-                            str+=` = -${d.Late+d.LateProject}%`
-                        return `<div class="tooltip">${latetotal > 0 ? `-${latetotal}%` : ''}<span class="tooltiptext">${str}</span></div>`;
+                        return d.Late?`-${d.Late}%`:'';
                     }else
-                            return d.Late+d.LateProject;
+                            return d.Late;
                     }
+            },
+            {   targets: 6,
+                title: 'Late submit project',
+                orderable: true,
+                "searchable": false,
+                "data": null,
+                "render": function ( d, type, row, meta ) {
+                    if (type == 'display'){
+                        return d.LateProject?`-${d.LateProject}%`:'';
+                    }else
+                        return d.LateProject;
+                }
             }
         ]});
 
