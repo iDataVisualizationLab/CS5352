@@ -142,7 +142,7 @@ d3.json('data/students.json').then(function (data) {
     function colorTopic (d){
         topic = d.Topic
         author = d.Author
-        if (author!=='TTU'&&author!=='Video') {
+        if (author!=='TTU'&&topic!=='video') {
             if (topic == '' || topic === null)
                 return '#eeee71';
             if (topicNet[topic] && topicNet[topic].length > 1)
@@ -153,7 +153,7 @@ d3.json('data/students.json').then(function (data) {
         if (author==='TTU')
             return '#13d9b7'
         else
-            return '#4f7ad1'
+            return '#eeee71';
     }
 })});
 
