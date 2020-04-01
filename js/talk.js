@@ -60,7 +60,10 @@ d3.json('data/students.json').then(function (data) {
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display') {
-                        return (studenDetail[d.Fullname]?`<img alt="${d.Fullname}" class="clip-circle ${d.Date.next?'pluse-red':''}" src="${studenDetail[d.Fullname].photo}">`:'') +d.Fullname+(d.Date.next?'<span style="color: #d9290b">--Next presenter--</span>':'');
+                        if(studenDetail[d.Fullname])
+                            return (studenDetail[d.Fullname]?`<img alt="${d.Fullname}" class="clip-circle ${d.Date.next?'pluse-red':''}" src="${studenDetail[d.Fullname].photo}">`:'') +d.Fullname+(d.Date.next?'<span style="color: #d9290b">--Next presenter--</span>':'');
+                        else if(d.Fullname==="video")
+                            return `<a href="${d.Paperlink}"><img alt="${d.Fullname}" class="clip-circle " src="images/youtube.png">VIDEO</a>`
                     }
                     return d.Fullname;
                 }
@@ -84,7 +87,10 @@ d3.json('data/students.json').then(function (data) {
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display')
-                        return `<p style="background-color: ${colorTopic(d)}">${d.Topic}${d.Topic?`<br><a href="${d.Paperlink}">Paper</a> of ${d.Author} `:'----not submit----'}</p>`;
+                        if(studenDetail[d.Fullname])
+                            return `<p style="background-color: ${colorTopic(d)}">${d.Topic}${d.Topic?`<br><a href="${d.Paperlink}">Paper</a> of ${d.Author} `:'----not submit----'}</p>`;
+                        else
+                            return `<p style="background-color: ${colorTopic(d)}">${d.Topic} <a href="${d.Paperlink}">Click here</a></p>`
                     else
                         return d.Topic;
                 }
@@ -108,7 +114,10 @@ d3.json('data/students.json').then(function (data) {
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display')
-                        return d.Projectlink==''?'<p style="background-color: red">\'----not submit----\'</p>':`<a target="blank" href="https://github.com/iDataVisualizationLab/CS5352/blob/master/talks/${d.Projectlink}"><i class="fa fa-cloud-download"></i></a>`;
+                        if(studenDetail[d.Fullname])
+                            return d.Projectlink==''?'<p style="background-color: red">\'----not submit----\'</p>':`<a target="blank" href="https://github.com/iDataVisualizationLab/CS5352/blob/master/talks/${d.Projectlink}"><i class="fa fa-cloud-download"></i></a>`;
+                        else
+                            return `<a target="blank" href="${d.Projectlink}"><i class="fa fa-cloud-download"></i></a>`
                     else
                         return d.Projectlink;
                 }
@@ -130,7 +139,7 @@ d3.json('data/students.json').then(function (data) {
     function colorTopic (d){
         topic = d.Topic
         author = d.Author
-        if (author!=='TTU') {
+        if (author!=='TTU'&&author!=='Video') {
             if (topic == '' || topic === null)
                 return '#eeee71';
             if (topicNet[topic] && topicNet[topic].length > 1)
@@ -138,7 +147,10 @@ d3.json('data/students.json').then(function (data) {
             else
                 return 'unset';
         }
-        return '#13d9b7'
+        if (author==='TTU')
+            return '#13d9b7'
+        else
+            return '#4f7ad1'
     }
 })});
 
