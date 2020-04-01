@@ -63,7 +63,7 @@ d3.json('data/students.json').then(function (data) {
                         if(studenDetail[d.Fullname])
                             return (studenDetail[d.Fullname]?`<img alt="${d.Fullname}" class="clip-circle ${d.Date.next?'pluse-red':''}" src="${studenDetail[d.Fullname].photo}">`:'') +d.Fullname+(d.Date.next?'<span style="color: #d9290b">--Next presenter--</span>':'');
                         else if(d.Fullname==="video")
-                            return `<a href="${d.Paperlink}"><img alt="${d.Fullname}" class="clip-circle " src="images/youtube.png">VIDEO ${d.Date.key}</a>`
+                            return ''
                     }
                     return d.Fullname;
                 }
@@ -90,7 +90,10 @@ d3.json('data/students.json').then(function (data) {
                         if(studenDetail[d.Fullname])
                             return `<p style="background-color: ${colorTopic(d)}">${d.Topic}${d.Topic?`<br><a href="${d.Paperlink}">Paper</a> of ${d.Author} `:'----not submit----'}</p>`;
                         else
-                            return `<p style="background-color: ${colorTopic(d)}">${d.Topic} <a href="${d.Paperlink}">Click here</a></p>`
+                            if (d.Fullname!=="video")
+                                return `<p style="background-color: ${colorTopic(d)}">${d.Topic} <a href="${d.Paperlink}">Click here</a></p>`
+                            else
+                                return `<a style="background-color: ${colorTopic(d)}" href="${d.Paperlink}" target="blank"><img alt="${d.Fullname}" class="clip-circle " src="images/youtube.png">VIDEO ${d.Date.key}</a>`
                     else
                         return d.Topic;
                 }
@@ -117,7 +120,7 @@ d3.json('data/students.json').then(function (data) {
                         if(studenDetail[d.Fullname])
                             return d.Projectlink==''?'<p style="background-color: red">\'----not submit----\'</p>':`<a target="blank" href="https://github.com/iDataVisualizationLab/CS5352/blob/master/talks/${d.Projectlink}"><i class="fa fa-cloud-download"></i></a>`;
                         else
-                            return `<a target="blank" href="${d.Projectlink}"><i class="fa fa-cloud-download"></i></a>`
+                            return d.Projectlink?`<a target="blank" href="${d.Projectlink}"><i class="fa fa-cloud-download"></i></a>`:''
                     else
                         return d.Projectlink;
                 }
