@@ -63,7 +63,7 @@ d3.json('data/students.json').then(function (data) {
                         if(studenDetail[d.Fullname])
                             return (studenDetail[d.Fullname]?`<img alt="${d.Fullname}" class="clip-circle ${d.Date.next?'pluse-red':''}" src="${studenDetail[d.Fullname].photo}">`:'') +d.Fullname+(d.Date.next?'<span style="color: #d9290b">--Next presenter--</span>':'');
                         else if(d.Fullname==="video")
-                            return `<a href="${d.Paperlink}"><img alt="${d.Fullname}" class="clip-circle " src="images/youtube.png">VIDEO</a>`
+                            return `<a href="${d.Paperlink}"><img alt="${d.Fullname}" class="clip-circle " src="images/youtube.png">VIDEO ${d.Date.key}</a>`
                     }
                     return d.Fullname;
                 }
