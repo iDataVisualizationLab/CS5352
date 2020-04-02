@@ -1255,7 +1255,7 @@ function tickedT1() {
         if (document.getElementById("checkboxP1").checked){
             nodesP1[i].x = secondGroupX;
             if ((nodesP1[i].T1_score)){
-                nodesP1[i].y = yP1((nodesP1[i].T1_score))
+                nodesP1[i].y = yP1((nodesP1[i].T1_score)*20/30)
             }
             else {
                 nodesP1[i].y = yP1(0);
