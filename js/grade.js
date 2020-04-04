@@ -161,8 +161,7 @@ function main(){
         // Scale the range of the data
         x.domain([aData[0][0].date,today]);
         xNew.domain([aData[0][0].date,today]);
-
-        y.domain([0,d3.max(Object.keys(data),k=>data[k].array.score)]);
+        y.domain([0,Math.max(22,d3.max(Object.keys(data),k=>data[k].array.score))]);
         yAxis.domain([0, 0.2]);
 
 
@@ -433,7 +432,7 @@ function main(){
 
         // Add the y Axis
         axis = yAxis.copy();
-        axis.domain([0,d3.max(Object.keys(data),k=>data[k].array.score)/100]);
+        axis.domain([0,Math.max(22,d3.max(Object.keys(data),k=>data[k].array.score))/100]);
         svg.append("g")
             .style("font-size", "14px")
             .call(d3.axisLeft(axis).ticks(12, "%"));
