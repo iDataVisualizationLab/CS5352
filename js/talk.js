@@ -8,6 +8,7 @@ d3.json('data/students.json').then(function (data) {
     d3.tsv('data/T1.tsv').then(data=>{
     data.forEach((d,i)=>{
         d.Date={key:d.Date,value:d.Date===""?Infinity:(temp = parseTime(d.Date),temp.setHours(12),temp)};
+        d.Paperlink =  (d.Paperlink.includes('http')?'':'https://github.com/iDataVisualizationLab/CS5352/blob/master/talks/papers/')+d.Paperlink;
         d["SubmisionTimeProject"] = d["SubmisionTimeProject"]===""?new Date():parseTime(d["SubmisionTimeProject"]);
         d.Late = daysBetween(submisionTime_mark, d["SubmisionTimeProject"]);
     });
