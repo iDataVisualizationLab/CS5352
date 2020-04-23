@@ -23,7 +23,11 @@ d3.json('data/students.json').then(function (data) {
         Late: 0,
     });
     let topicNet = d3.nest().key(d=>d.Topic).object(data.filter(d=>d.Topic!==''));
-    data.sort((a,b)=>a.Date.value-b.Date.value).forEach((d,i)=>d.index = i+1);
+    let studentCount = 0;
+    data.sort((a,b)=>a.Date.value-b.Date.value).forEach((d,i)=> {
+        d.index = i + 1;
+        d.studentIndex = studenDetail[d.Fullname] ? (studentCount++, studentCount) : undefined;
+    });
     let marker = data.find(d=>d.Date.value>new Date());
     data.filter(d=>marker.Date.key===d.Date.key).forEach(d=>d.Date.next=true);
     // d3.select('#listHolder tbody')
@@ -50,7 +54,7 @@ d3.json('data/students.json').then(function (data) {
                 className:'text',
                 "render": function ( d, type, row, meta ) {
                     if (type=='display')
-                        return d.index;
+                        return d.studentIndex||'';
                     else
                         return d.index;
                 }
