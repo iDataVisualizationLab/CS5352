@@ -1503,23 +1503,24 @@ function showP1(){
             .attr("x", secondGroupX)
             .attr("y", groupY)
             .attr("text-anchor", "middle")
-            .text("In-class Presentation")
+            .text("In-class Presentation");
         svg.append("text")
             .attr("class", "columnLabel")
             .attr("x", thirdGroupX)
             .attr("y", groupY)
             .attr("text-anchor", "middle")
-            .text("Project 1")
+            .text("Project 1");
+
         svg.append("text")
             .attr("class", "columnLabel")
             .attr("x", fourthGroupX)
             .attr("y", groupY)
             .attr("text-anchor", "middle")
-            .text("Project 2")
+            .text("Final");
 
         svg.selectAll(".columnLabel")
             .transition().duration(400)
-            .attr("fill-opacity",1)
+            .attr("fill-opacity",1);
 
         // Draw grade axis ***********
         // aGrade
