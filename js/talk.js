@@ -29,7 +29,8 @@ d3.json('data/students.json').then(function (data) {
         d.studentIndex = studenDetail[d.Fullname] ? (studentCount++, studentCount) : undefined;
     });
     let marker = data.find(d=>d.Date.value>new Date());
-    data.filter(d=>marker.Date.key===d.Date.key).forEach(d=>d.Date.next=true);
+    if (marker)
+        data.filter(d=>marker.Date.key===d.Date.key).forEach(d=>d.Date.next=true);
     // d3.select('#listHolder tbody')
     //     .selectAll('tr')
     //     .data(data)
