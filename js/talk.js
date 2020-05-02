@@ -101,7 +101,7 @@ d3.json('data/students.json').then(function (data) {
                                     return `<a style="background-color: ${colorTopic(d)}" href="${d.Paperlink}" target="blank"><img alt="${d.Fullname}" class="clip-circle " src="images/youtube.png">VIDEO ${d.Date.key}</a>`
                                     break;
                                 case "final exam":
-                                    return `<span style="background-color: ${colorTopic(d)}">FINAL EXAM</span>`
+                                    return `<span style="background-color: ${colorTopic(d)}">${d.Topic.toUpperCase()}</span>`
                                     break;
                                 default:
                                     return `<p style="background-color: ${colorTopic(d)}">${d.Topic} <a href="${d.Paperlink}">Click here</a></p>`;
@@ -155,7 +155,7 @@ d3.json('data/students.json').then(function (data) {
     function colorTopic (d){
         topic = d.Topic
         author = d.Author
-        if (author!=='TTU'&&topic!=='video'&&topic!=='final video') {
+        if (author!=='TTU'&&topic!=='video'&&!topic.includes('final video')) {
             if (topic == '' || topic === null)
                 return '#eeee71';
             if (topicNet[topic] && topicNet[topic].length > 1)
