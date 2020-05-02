@@ -68,7 +68,7 @@ d3.json('data/students.json').then(function (data) {
                     if (type=='display') {
                         if(studenDetail[d.Fullname])
                             return (studenDetail[d.Fullname]?`<img alt="${d.Fullname}" class="clip-circle ${d.Date.next?'pluse-red':''}" src="${studenDetail[d.Fullname].photo}">`:'') +d.Fullname+(d.Date.next?'<span style="color: #d9290b">--Next presenter--</span>':'');
-                        else if(d.Fullname==="video")
+                        else if(d.Fullname==="video"||d.Fullname==="final exam")
                             return ''
                     }
                     return d.Fullname;
@@ -96,10 +96,17 @@ d3.json('data/students.json').then(function (data) {
                         if(studenDetail[d.Fullname])
                             return `<p style="background-color: ${colorTopic(d)}">${d.Topic}${d.Topic?`<br><a href="${d.Paperlink}">Paper</a> of ${d.Author} `:'----not submit----'}</p>`;
                         else
-                            if (d.Fullname!=="video")
-                                return `<p style="background-color: ${colorTopic(d)}">${d.Topic} <a href="${d.Paperlink}">Click here</a></p>`
-                            else
-                                return `<a style="background-color: ${colorTopic(d)}" href="${d.Paperlink}" target="blank"><img alt="${d.Fullname}" class="clip-circle " src="images/youtube.png">VIDEO ${d.Date.key}</a>`
+                            switch (d.Fullname){
+                                case "video":
+                                    return `<a style="background-color: ${colorTopic(d)}" href="${d.Paperlink}" target="blank"><img alt="${d.Fullname}" class="clip-circle " src="images/youtube.png">VIDEO ${d.Date.key}</a>`
+                                    break;
+                                case "final exam":
+                                    return `<span style="background-color: ${colorTopic(d)}">FINAL EXAM</span>`
+                                    break;
+                                default:
+                                    return `<p style="background-color: ${colorTopic(d)}">${d.Topic} <a href="${d.Paperlink}">Click here</a></p>`;
+                                    break;
+                            }
                     else
                         return d.Topic;
                 }
@@ -148,7 +155,7 @@ d3.json('data/students.json').then(function (data) {
     function colorTopic (d){
         topic = d.Topic
         author = d.Author
-        if (author!=='TTU'&&topic!=='video') {
+        if (author!=='TTU'&&topic!=='video'&&topic!=='final video') {
             if (topic == '' || topic === null)
                 return '#eeee71';
             if (topicNet[topic] && topicNet[topic].length > 1)
