@@ -153,6 +153,8 @@ d3.json('data/students.json').then(function (data) {
         ]});
 
     function colorTopic (d){
+        if (d.marker)
+            return d.marker;
         topic = d.Topic
         author = d.Author
         if (author!=='TTU'&&topic!=='video'&&!topic.includes('final video')) {
