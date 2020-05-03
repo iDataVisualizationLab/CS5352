@@ -114,7 +114,7 @@ function main(){
             dataList.forEach(t=>{
                 var object =  {};
                 object.date = t.time;
-                object.score = +d[t.key]/2;
+                object.score = +d[t.key];
                 data[d.Students].array.push(object);
             });
 
@@ -161,7 +161,7 @@ function main(){
         // Scale the range of the data
         x.domain([aData[0][0].date,today]);
         xNew.domain([aData[0][0].date,today]);
-        y.domain([0, 20]);
+        y.domain([0,Math.max(22,d3.max(Object.keys(data),k=>data[k].array.score))]);
         yAxis.domain([0, 0.2]);
 
 
@@ -186,9 +186,9 @@ function main(){
             .attr("stroke-width", 1)
             .style("stroke-dasharray", ("3, 3"))
             .attr("x1", 200)
-            .attr("y1", y(10))
+            .attr("y1", y(20))
             .attr("x2", x(today))
-            .attr("y2", y(10));
+            .attr("y2", y(20));
 
         svg.selectAll(".legendCircle")
             .data(groupCount).enter()
@@ -431,9 +431,11 @@ function main(){
             .call(d3.axisBottom(x));
 
         // Add the y Axis
+        axis = yAxis.copy();
+        axis.domain([0,Math.max(22,d3.max(Object.keys(data),k=>data[k].array.score))/100]);
         svg.append("g")
             .style("font-size", "14px")
-            .call(d3.axisLeft(yAxis).ticks(12, "%"));
+            .call(d3.axisLeft(axis).ticks(12, "%"));
 
         // Append xAxis label
         svg.append("text")
@@ -1255,7 +1257,7 @@ function tickedT1() {
         if (document.getElementById("checkboxP1").checked){
             nodesP1[i].x = secondGroupX;
             if ((nodesP1[i].T1_score)){
-                nodesP1[i].y = yP1((nodesP1[i].T1_score))
+                nodesP1[i].y = yP1((nodesP1[i].T1_score)*20/30)
             }
             else {
                 nodesP1[i].y = yP1(0);
@@ -1501,23 +1503,24 @@ function showP1(){
             .attr("x", secondGroupX)
             .attr("y", groupY)
             .attr("text-anchor", "middle")
-            .text("In-class Presentation")
+            .text("In-class Presentation");
         svg.append("text")
             .attr("class", "columnLabel")
             .attr("x", thirdGroupX)
             .attr("y", groupY)
             .attr("text-anchor", "middle")
-            .text("Project 1")
+            .text("Project 1");
+
         svg.append("text")
             .attr("class", "columnLabel")
             .attr("x", fourthGroupX)
             .attr("y", groupY)
             .attr("text-anchor", "middle")
-            .text("Project 2")
+            .text("Final");
 
         svg.selectAll(".columnLabel")
             .transition().duration(400)
-            .attr("fill-opacity",1)
+            .attr("fill-opacity",1);
 
         // Draw grade axis ***********
         // aGrade

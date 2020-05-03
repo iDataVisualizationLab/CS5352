@@ -8,6 +8,7 @@ d3.json('data/students.json').then(function (data) {
     d3.tsv('data/T1.tsv').then(data=>{
     data.forEach((d,i)=>{
         d.Date={key:d.Date,value:d.Date===""?Infinity:(temp = parseTime(d.Date),temp.setHours(12),temp)};
+        d.Paperlink =  (d.Paperlink.includes('http')?'':'https://github.com/iDataVisualizationLab/CS5352/blob/master/talks/papers/')+d.Paperlink;
         d["SubmisionTimeProject"] = d["SubmisionTimeProject"]===""?new Date():parseTime(d["SubmisionTimeProject"]);
         d.Late = daysBetween(submisionTime_mark, d["SubmisionTimeProject"]);
     });
@@ -22,9 +23,14 @@ d3.json('data/students.json').then(function (data) {
         Late: 0,
     });
     let topicNet = d3.nest().key(d=>d.Topic).object(data.filter(d=>d.Topic!==''));
-    data.sort((a,b)=>a.Date.value-b.Date.value).forEach((d,i)=>d.index = i+1);
+    let studentCount = 0;
+    data.sort((a,b)=>a.Date.value-b.Date.value).forEach((d,i)=> {
+        d.index = i + 1;
+        d.studentIndex = studenDetail[d.Fullname] ? (studentCount++, studentCount) : undefined;
+    });
     let marker = data.find(d=>d.Date.value>new Date());
-    data.filter(d=>marker.Date.key===d.Date.key).forEach(d=>d.Date.next=true);
+    if (marker)
+        data.filter(d=>marker.Date.key===d.Date.key).forEach(d=>d.Date.next=true);
     // d3.select('#listHolder tbody')
     //     .selectAll('tr')
     //     .data(data)
@@ -49,7 +55,7 @@ d3.json('data/students.json').then(function (data) {
                 className:'text',
                 "render": function ( d, type, row, meta ) {
                     if (type=='display')
-                        return d.index;
+                        return d.studentIndex||'';
                     else
                         return d.index;
                 }
@@ -60,7 +66,10 @@ d3.json('data/students.json').then(function (data) {
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display') {
-                        return (studenDetail[d.Fullname]?`<img alt="${d.Fullname}" class="clip-circle ${d.Date.next?'pluse-red':''}" src="${studenDetail[d.Fullname].photo}">`:'') +d.Fullname+(d.Date.next?'<span style="color: #d9290b">--Next presenter--</span>':'');
+                        if(studenDetail[d.Fullname])
+                            return (studenDetail[d.Fullname]?`<img alt="${d.Fullname}" class="clip-circle ${d.Date.next?'pluse-red':''}" src="${studenDetail[d.Fullname].photo}">`:'') +d.Fullname+(d.Date.next?'<span style="color: #d9290b">--Next presenter--</span>':'');
+                        else if(d.Fullname==="video"||d.Fullname==="final exam")
+                            return ''
                     }
                     return d.Fullname;
                 }
@@ -84,7 +93,20 @@ d3.json('data/students.json').then(function (data) {
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display')
-                        return `<p style="background-color: ${colorTopic(d)}">${d.Topic}${d.Topic?`<br><a href="${d.Paperlink}">Paper</a> of ${d.Author} `:'----not submit----'}</p>`;
+                        if(studenDetail[d.Fullname])
+                            return `<p style="background-color: ${colorTopic(d)}">${d.Topic}${d.Topic?`<br><a href="${d.Paperlink}">Paper</a> of ${d.Author} `:'----not submit----'}</p>`;
+                        else
+                            switch (d.Fullname){
+                                case "video":
+                                    return `<a style="background-color: ${colorTopic(d)}" href="${d.Paperlink}" target="blank"><img alt="${d.Fullname}" class="clip-circle " src="images/youtube.png">VIDEO ${d.Date.key}</a>`
+                                    break;
+                                case "final exam":
+                                    return `<span style="background-color: ${colorTopic(d)}">${d.Topic.toUpperCase()}</span>`
+                                    break;
+                                default:
+                                    return `<p style="background-color: ${colorTopic(d)}">${d.Topic} <a href="${d.Paperlink}">Click here</a></p>`;
+                                    break;
+                            }
                     else
                         return d.Topic;
                 }
@@ -108,7 +130,10 @@ d3.json('data/students.json').then(function (data) {
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display')
-                        return d.Projectlink==''?'<p style="background-color: red">\'----not submit----\'</p>':`<a target="blank" href="https://github.com/iDataVisualizationLab/CS5352/blob/master/talks/${d.Projectlink}"><i class="fa fa-cloud-download"></i></a>`;
+                        if(studenDetail[d.Fullname])
+                            return d.Projectlink==''?'<p style="background-color: red">\'----not submit----\'</p>':`<a target="blank" href="https://github.com/iDataVisualizationLab/CS5352/blob/master/talks/${d.Projectlink}"><i class="fa fa-cloud-download"></i></a>`;
+                        else
+                            return d.Projectlink?`<a target="blank" href="${d.Projectlink}"><i class="fa fa-cloud-download"></i></a>`:''
                     else
                         return d.Projectlink;
                 }
@@ -128,9 +153,11 @@ d3.json('data/students.json').then(function (data) {
         ]});
 
     function colorTopic (d){
+        if (d.marker)
+            return d.marker;
         topic = d.Topic
         author = d.Author
-        if (author!=='TTU') {
+        if (author!=='TTU'&&topic!=='video'&&!topic.includes('final video')) {
             if (topic == '' || topic === null)
                 return '#eeee71';
             if (topicNet[topic] && topicNet[topic].length > 1)
@@ -138,7 +165,10 @@ d3.json('data/students.json').then(function (data) {
             else
                 return 'unset';
         }
-        return '#13d9b7'
+        if (author==='TTU')
+            return '#13d9b7'
+        else
+            return '#eeee71';
     }
 })});
 

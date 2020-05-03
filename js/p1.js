@@ -2,6 +2,7 @@
 var parseTime = d3.timeParse("%m/%d/%Y");
 
 var submisionTime_mark = parseTime("3/7/2020");
+var submisionProjectTime_mark = parseTime("3/29/2020");
 // load data
 d3.json('data/students.json').then(function (data) {
     studenDetail = {};
@@ -10,7 +11,10 @@ d3.json('data/students.json').then(function (data) {
     data.forEach((d,i)=>{
         d.Date={key:d.Date,value:d.Date===""?Infinity:(temp = parseTime(d.Date),temp.setHours(12),temp)}
         d["SubmisionTime"] = d["SubmisionTime"]===""?new Date():parseTime(d["SubmisionTime"]);
-        d.Late = daysBetween(submisionTime_mark, d["SubmisionTime"]);
+        d["isdone"] = d["SubmissionProject"]!=="";
+        d["SubmissionProject"] = d["SubmissionProject"]===""?new Date():parseTime(d["SubmissionProject"]);
+        d.Late = daysBetween(submisionTime_mark, d["SubmisionTime"])*2;
+        d.LateProject = daysBetween(submisionProjectTime_mark, d["SubmissionProject"])*2;
         });
 
     let topicNet = d3.nest().key(d=>d.Topic).object(data.filter(d=>d.Topic!==''));
@@ -20,7 +24,7 @@ d3.json('data/students.json').then(function (data) {
 
     $('#listHolder').DataTable({
         data: data,
-        "order": [[2, "asc"]],
+        "order": [[1, "asc"]],
         "pageLength": 50,
         "columnDefs": [
             {   targets: 0,
@@ -48,16 +52,16 @@ d3.json('data/students.json').then(function (data) {
                 }
             },
             {   targets: 2,
-                title: "Present date",
+                title: "Status",
                 orderable: true,
                 "data": null,
                 className:'angle',
                 "render": function ( d, type, row, meta ) {
                     if (type=='display') {
-                        return d.Date.key;
+                        return d.isdone?'Finish':'';
                     }
                     else
-                        return +d.Date.value;
+                        return d.isdone;
                 }
             },
             {   targets: 3,
@@ -71,28 +75,55 @@ d3.json('data/students.json').then(function (data) {
                         return d.Topic;
                 }
             },
-            {   targets: 4,
+            {   targets: 5,
                 title: 'Project link',
                 orderable: false,
                 "searchable": false,
                 "data": null,
                 "render": function ( d, type, row, meta ) {
+                    if (d.Projectlink!=='')
+                        if(!d.Projectlink.includes('https://'))
+                            d.Projectlink = 'project1/'+d.Projectlink;
                     if (type=='display')
                         return d.Projectlink==''?'':`<a target="blank" href="${d.Projectlink}"><i class="fa fa-cloud-download"></i></a>`;
                     else
                         return d.Projectlink;
                 }
             },
-            {   targets: 5,
-                title: 'Late',
-                orderable: true,
+            {   targets: 4,
+                title: 'Image',
+                orderable: false,
                 "searchable": false,
                 "data": null,
                 "render": function ( d, type, row, meta ) {
                     if (type=='display')
-                        return d.Late>0?`-${d.Late}%`:'';
+                        return d.Image?`<image src="project1/${d.Image}" style="width:80px;height:80px;"></image>`:'';
                     else
-                        return d.Late;
+                        return d.Projectlink;
+                }
+            },
+            {   targets: 6,
+                title: 'Late submit topic',
+                orderable: true,
+                "searchable": false,
+                "data": null,
+                "render": function ( d, type, row, meta ) {
+                    if (type == 'display'){
+                        return d.Late?`-${d.Late}%`:'';
+                    }else
+                            return d.Late;
+                    }
+            },
+            {   targets: 7,
+                title: 'Late submit project',
+                orderable: true,
+                "searchable": false,
+                "data": null,
+                "render": function ( d, type, row, meta ) {
+                    if (type == 'display'){
+                        return d.LateProject?`-${d.LateProject}%`:'';
+                    }else
+                        return d.LateProject;
                 }
             }
         ]});
