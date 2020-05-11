@@ -124,7 +124,7 @@ function main(){
 
             data[d.Students].array.T1_score = parseFloat(data2[d.Students].T1_score);
             // data[d.Students].array.T1_audience = parseFloat(data2[d.Students].T1_audience);
-            // data[d.Students].array.P1_score = parseFloat(data2[d.Students].P1_score*3/10);
+            data[d.Students].array.P1_score = parseFloat(data2[d.Students].P1_score*3/10);
             // data[d.Students].array.P1_audience = parseFloat(data2[d.Students].P1_audience?data2[d.Students].P1_audience:0);
             // data[d.Students].array.P1_teamEvaluation =
             //     parseFloat(data2[d.Students].P1_teamEvaluation?data2[d.Students].P1_teamEvaluation:0);
