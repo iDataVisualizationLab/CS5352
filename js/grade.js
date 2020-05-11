@@ -124,7 +124,8 @@ function main(){
 
             data[d.Students].array.T1_score = parseFloat(data2[d.Students].T1_score);
             // data[d.Students].array.T1_audience = parseFloat(data2[d.Students].T1_audience);
-            data[d.Students].array.P1_score = parseFloat(data2[d.Students].P1_score*3/10);
+            data[d.Students].array.P1_score = parseFloat(data2[d.Students].P1_score);
+            data[d.Students].array.Final = parseFloat(data2[d.Students].Final);
             // data[d.Students].array.P1_audience = parseFloat(data2[d.Students].P1_audience?data2[d.Students].P1_audience:0);
             // data[d.Students].array.P1_teamEvaluation =
             //     parseFloat(data2[d.Students].P1_teamEvaluation?data2[d.Students].P1_teamEvaluation:0);
@@ -561,11 +562,7 @@ function main(){
             nodeP31.nickname = aData[i].nickname;
             nodeP31.group = aData[i].group;
             nodeP31.score = aData[i].score;
-            nodeP31.P2_sketch = aData[i].P2_sketch;
-            nodeP31.P2_userStudy = aData[i].P2_userStudy;
-            // nodeP31.P3_talk = aData[i].P3_talk;
-            // nodeP31.P3_report = aData[i].P3_report;
-            // nodeP31.P3_review = aData[i].P3_review;
+            nodeP31.Final = aData[i].Final;
             nodeP31.date = aData[i].date;
             nodeP31.image = aData[i].image;
             nodesP3.push(nodeP31);
@@ -575,11 +572,7 @@ function main(){
             nodeP32.nickname = aData[i].nickname;
             nodeP32.group = aData[i].group;
             nodeP32.score = aData[i].score;
-            nodeP32.P2_sketch = aData[i].P2_sketch;
-            nodeP32.P2_userStudy = aData[i].P2_userStudy;
-            // nodeP32.P3_talk = aData[i].P3_talk;
-            // nodeP32.P3_report = aData[i].P3_report;
-            // nodeP32.P3_review = aData[i].P3_review;
+            nodeP32.Final = aData[i].Final;
             nodeP32.date = aData[i].date;
             nodeP32.image = aData[i].image;
             nodesP3.push(nodeP32);
@@ -600,8 +593,8 @@ function main(){
             if (p0>10)
                 p0=10;
             var p1 = nodesP1[i].T1_score||0;
-            var p2 = (nodesP2[i].P1_score+nodesP2[i].P1_audience+nodesP2[i].P1_teamEvaluation)||0;
-            var p3 = (nodesP3[i].P2_sketch + nodesP3[i].P2_userStudy)||0;
+            var p2 = nodesP2[i].P1_score;
+            var p3 = nodesP3[i].Final;
             // +nodesP3[i].P3_talk+nodesP3[i].P3_report +nodesP3[i].P3_review;
             var sum= p0+p1+p2+p3;
             var finalGrade = " ";
@@ -968,26 +961,6 @@ function textP1(index){
         .attr("y", nodesP2[index].y+4)
         .text("P1 score: "+(nodesP2[index].P1_score ? nodesP2[index].P1_score + "%" : "N/A"));
 
-    svg.append("text")
-        .attr("class", "textP2")
-        .style("font-size", "13px")
-        .attr("text-anchor", "left")
-        .style("text-shadow", "1px 1px 0 rgba(200, 200, 200, 0.9")
-        .attr("fill", "#000")
-        .attr("x", radius+nodesP2[index].x+20)
-        .attr("y", nodesP2[index].y+19)
-        .text("P1 audience evaluation: "+($.isNumeric(nodesP2[index].P1_audience) ? (nodesP2[index].P1_audience + "%") : "N/A"));
-
-    svg.append("text")
-        .attr("class", "textP2")
-        .style("font-size", "13px")
-        .attr("text-anchor", "left")
-        .style("text-shadow", "1px 1px 0 rgba(200, 200, 200, 0.9")
-        .attr("fill", "#000")
-        .attr("x", radius+nodesP2[index].x+20)
-        .attr("y", nodesP2[index].y+35)
-        .text("P1 team evaluation: "+($.isNumeric(nodesP2[index].P1_teamEvaluation) ? (nodesP2[index].P1_teamEvaluation + "%") : "N/A"));
-
     //
     //  // Project 2
     svg.append("text")
@@ -998,17 +971,7 @@ function textP1(index){
         .attr("fill", "#000")
         .attr("x", radius+nodesP3[index].x+12)
         .attr("y", nodesP3[index].y-12)
-        .text("P2 Sketch: "+nodesP3[index].P2_sketch+"%");
-
-    svg.append("text")
-        .attr("class", "textP3")
-        .style("font-size", "13px")
-        .attr("text-anchor", "left")
-        .style("text-shadow", "1px 1px 0 rgba(200, 200, 200, 0.9")
-        .attr("fill", "#000")
-        .attr("x", radius+nodesP3[index].x+20)
-        .attr("y", nodesP3[index].y+3)
-        .text("P2 User Study: "+nodesP3[index].P2_userStudy+"%");
+        .text("Final: "+nodesP3[index].Final+"%");
 
 
     // svg.append("text")
@@ -1294,67 +1257,6 @@ function tickedT1() {
 
 function tickedP2() {
     for (var i=0;i<nodesP2.length;i=i+2){
-      if (document.getElementById("checkboxP1").checked){
-        nodesP2[i].x = width*0.8;
-        var yy = nodesP2[i].P2_code+nodesP2[i].P2_talk+nodesP2[i].P2_report + nodesP2[i].P2_review;
-        nodesP2[i].y = yP1(yy*26/35);  // 35% compared to 20%
-     //   nodesP2[i].y = (nodesP2[i].y)/3;
-      }
-      else{
-        nodesP2[i].x = x(nodesP2[i].date);
-        nodesP2[i].y = y(nodesP2[i].score);
-      }
-
-    }
-    linkP2
-        .attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
-    link02
-        .attr("x1", function(d,i) { return nodesP1[i*2+1].x; })
-        .attr("y1", function(d,i) { return nodesP1[i*2+1].y; })
-        .attr("x2", function(d,i) { return nodesP2[i*2+1].x; })
-        .attr("y2", function(d,i) { return nodesP2[i*2+1].y; });
-
-    nodeP2
-        .attr("cx", function(d) { return d.x; })
-        .attr("cy", function(d) { return d.y; });
-}
-
-function tickedP3() {
-    for (var i=0;i<nodesP3.length;i=i+2){
-      if (document.getElementById("checkboxP1").checked){
-        nodesP3[i].x = width*0.95;
-        var yy = nodesP3[i].P3_code+nodesP3[i].P3_talk+nodesP3[i].P3_report
-                +nodesP3[i].P3_review;
-        nodesP3[i].y = yP1(yy*20/35);  // 35% compared to 20%
-     //   nodesP2[i].y = (nodesP2[i].y)/3;
-      }
-      else{
-        nodesP3[i].x = x(nodesP3[i].date);
-        nodesP3[i].y = y(nodesP3[i].score);
-      }
-
-    }
-    linkP3
-        .attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
-    link03
-        .attr("x1", function(d,i) { return nodesP2[i*2+1].x; })
-        .attr("y1", function(d,i) { return nodesP2[i*2+1].y; })
-        .attr("x2", function(d,i) { return nodesP3[i*2+1].x; })
-        .attr("y2", function(d,i) { return nodesP3[i*2+1].y; });
-
-    nodeP3
-        .attr("cx", function(d) { return d.x; })
-        .attr("cy", function(d) { return d.y; });
-}
-
-function tickedP2() {
-    for (var i=0;i<nodesP2.length;i=i+2){
         if (document.getElementById("checkboxP1").checked){
             nodesP2[i].x = thirdGroupX;
             var exist = !!(nodesP2[i].P1_score);
@@ -1389,10 +1291,10 @@ function tickedP3() {
     for (var i=0;i<nodesP3.length;i=i+2){
         if (document.getElementById("checkboxP1").checked){
             nodesP3[i].x = fourthGroupX;
-            var yy = nodesP3[i].P2_sketch + nodesP3[i].P2_userStudy
+            var yy = nodesP3[i].Final
             // +nodesP3[i].P3_talk+nodesP3[i].P3_report +nodesP3[i].P3_review;
 
-            nodesP3[i].y = yy? getY(yy) : yP1(0);  // 5% compared to 22%
+            nodesP3[i].y = yy? yP1(yy*20/30) : yP1(0);  // 5% compared to 22%
 
             function getY(yy){
                 if (yy === 11){
