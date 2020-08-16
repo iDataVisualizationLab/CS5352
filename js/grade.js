@@ -158,7 +158,7 @@ function main(){
             groupCount[arr.group].program = data2[key].Program;
         }
         // console.log(aData)
-
+        today = aData[0][aData[0].length-1].date;
         // Scale the range of the data
         x.domain([aData[0][0].date,today]);
         xNew.domain([aData[0][0].date,today]);
